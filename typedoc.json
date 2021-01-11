@@ -1,0 +1,34 @@
+{
+    "entryPoints": [
+        "./src"
+    ],
+    "out": "docs",
+    "includes": "./src",
+    "exclude": [
+        "**/*.test.ts",
+        "**/index.ts"
+    ],
+
+    "theme": "./node_modules/typedoc-neo-theme/bin/default",
+
+    "includeVersion": true,
+    "categorizeByGroup": true,
+    "excludeExternals": true,
+    "excludePrivate": false,
+    "hideGenerator": true,
+    "disableSources": true,
+
+    "outline": [{
+        "Public Modules": {
+          "Translator": "models_Translator",
+          "Definition": "models_Definition",
+          "Errors": "models_Errors"
+        },
+        "Internal Modules": {
+          "StringReader": "helpers_StringReader",
+          "BidirectionalMap": "helpers_BidirectionalMap",
+          "Translation": "translations_Locale",
+          "Locale": "translations_Locale"
+        }
+      }]
+}

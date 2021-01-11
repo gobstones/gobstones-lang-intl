@@ -1,0 +1,53 @@
+{
+  "name": "@gobstones/gobstones-lang-intl",
+  "version": "0.0.1",
+  "description": "A Gobstones Language translation tool",
+  "repository": "https://github.com/gobstones/gobstones-lang-intl",
+  "author": "Alan Rodas Bonjour <alanrodas@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "Gobstones",
+    "Language",
+    "Translation",
+    "Abstract Language"
+  ],
+  "main": "dist/index.js",
+  "bin": "dist/gobstones-lang-intl",
+  "typings": "dist/typings/index.d.ts",
+  "scripts": {
+    "prepack": "nps build",
+    "start": "nps",
+    "build": "nps build",
+    "test": "nps test"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "eslint": "^7.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-no-null": "^1.0.2",
+    "eslint-plugin-prefer-arrow": "^1.2.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "jest": "^26.0.1",
+    "moo": "^0.5.1",
+    "move-file-cli": "^2.0.0",
+    "nps": "^5.10.0",
+    "nps-utils": "^1.7.0",
+    "prettier": "^2.0.5",
+    "serve": "^11.3.2",
+    "ts-jest": "^26.1.0",
+    "ts-loader": "^7.0.5",
+    "ts-node": "^8.10.2",
+    "typedoc": "^0.20.14",
+    "typedoc-neo-theme": "^1.0.10",
+    "typescript": "^3.9.3",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "commander": "^6.2.0",
+    "flat": "^5.0.2"
+  }
+}
