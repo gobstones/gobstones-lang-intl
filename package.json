@@ -1,6 +1,6 @@
 {
   "name": "@gobstones/gobstones-lang-intl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Gobstones Language translation tool",
   "repository": "https://github.com/gobstones/gobstones-lang-intl",
   "author": "Alan Rodas Bonjour <alanrodas@gmail.com>",
@@ -41,6 +41,7 @@
     "nps": "^5.10.0",
     "nps-utils": "^1.7.0",
     "onchange": "^7.1.0",
+    "pinst": "^2.1.4",
     "prettier": "^2.2.1",
     "serve": "^11.3.2",
     "ts-jest": "^26.5.1",
@@ -53,6 +54,6 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "@gobstones/gobstones-core": "^0.2.2"
+    "@gobstones/gobstones-core": "^0.2.3"
   }
 }

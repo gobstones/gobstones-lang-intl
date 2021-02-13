@@ -49,5 +49,9 @@ export interface Locale {
         toTokens: {
             description: string;
         };
+        errors: {
+            language: string;
+            file: string;
+        };
     };
 }

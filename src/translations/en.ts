@@ -47,6 +47,11 @@ export const en: Locale = {
         toTokens: {
             description:
                 'Translate Gobstones Localized code in the "from" language to Gobstones Abstract code'
+        },
+        errors: {
+            language:
+                'You specified "${lang}" as the language, but that\'s not a valid language. Select one of ${availableLangs}.',
+            file: 'The file ${fileName} does not exist or cannot be read.'
         }
     }
 };

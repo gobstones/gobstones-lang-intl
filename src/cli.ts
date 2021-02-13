@@ -27,6 +27,7 @@ cli({
         help: 'cli.descriptions.help',
         tool: 'cli.descriptions.tool',
         language: 'cli.descriptions.language',
+        languageError: 'cli.errors.language',
         version: 'cli.descriptions.version'
     }
 })
