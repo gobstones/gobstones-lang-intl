@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es2015",
         "rootDir": "./src",
         "esModuleInterop": true,
         "allowJs": true,
@@ -9,6 +9,7 @@
         "declaration": true,
         "declarationMap": true,
         "declarationDir": "dist/typings",
+        "moduleResolution": "node",
         "resolveJsonModule": true,
         "stripInternal": true
 

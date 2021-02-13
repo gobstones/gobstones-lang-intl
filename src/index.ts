@@ -1,14 +1,15 @@
+/* istanbul ignore file */
 export {
     GobstonesTranslator,
     GobstonesTranslatorOptions,
     TranslationOptions
-} from './models/Translator';
+} from './models/GobstonesTranslator';
 
 export {
     GobstonesTranslationError,
     NonExistentLocaleGiven,
-    NoFromLocaleGiven as NoFromLanguageGiven,
-    NoToLocaleGiven as NoToLanguageGiven,
+    NoFromLocaleGiven,
+    NoToLocaleGiven,
     NoNamesGiven,
     LocaleNameCollision
 } from './models/Errors';
@@ -16,4 +17,4 @@ export {
 export {
     LocaleDefinition as LanguageDefinition,
     LocaleTokens as LanguageDefinitionMsgs
-} from './models/Definition';
+} from './models/LocaleDefinition';

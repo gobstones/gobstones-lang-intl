@@ -1,0 +1,760 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>GobstonesTranslator | @gobstones/gobstones-lang-intl - v0.1.0</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<ul class="results-priority" style="display:none">
+					</ul>
+					<a href="../index.html" class="title">@gobstones/gobstones-lang-intl - v0.1.0</a>
+					&emsp;<a href="https://github.com/gobstones/gobstones-lang-intl" class="title">Repository</a>
+					&emsp;<a href="https://dev.gobstones.org" class="title">Gobstones Docs</a>
+					&emsp;<a href="https://dev.gobstones.org/contribution-guidelines" class="title">Contribution Guidelines</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules/models_gobstonestranslator.html">models/GobstonesTranslator</a>
+				</li>
+				<li>
+					<a href="models_gobstonestranslator.gobstonestranslator.html">GobstonesTranslator</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation outline primary">
+				<a style="margin-left:0em" href="../globals.html">Globals</a>
+				<ul style="display:none">
+					{&quot;Public Modules&quot;:{&quot;GobstonesTranslator&quot;:&quot;models_GobstonesTranslator&quot;,&quot;LocaleDefinition&quot;:&quot;models_LocaleDefinition&quot;,&quot;Errors&quot;:&quot;models_Errors&quot;},&quot;Internal Modules&quot;:{&quot;StringReader&quot;:&quot;helpers_StringReader&quot;,&quot;BidirectionalMap&quot;:&quot;helpers_BidirectionalMap&quot;,&quot;Translation&quot;:&quot;translations_Locale&quot;,&quot;Locale&quot;:&quot;translations_Locale&quot;}}
+				</ul>
+			</nav>
+		</div>
+		<div class="col-7 offset-3 col-content">
+			<h1>Class GobstonesTranslator</h1>
+			<section class="tsd-panel tsd-comment"><div class="tsd-comment tsd-typography tsd-comment-shorttext">
+					<div class="lead">
+						<p>The GobstonesTranslator class is in charge of translating all keywords and built-in
+							commands and expressions from a source locale to a destination locale, as well
+						as providing an abstract &#39;Tokens&#39; intermediate output that is locale agnostic.</p>
+					</div>
+					</div><div class="tsd-comment tsd-typography tsd-comment-text">
+					<p>You can construct an instance of this class (called a translator, for short) by
+						providing a set of <a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html">GobstonesTranslatorOptions</a> to the constructor, which are then
+					stored in the newly created instance as it&#39;s configuration.</p>
+					<p>The configuration of a translator is private and cannot be changed once constructed.</p>
+					<p>You can the ask the translator to perform different operations, such as translating
+						from a locale specific Gobstones Localized code to Gobstones Abstract code
+						(see <a href="models_gobstonestranslator.gobstonestranslator.html#totokens">toTokens</a>), or go the other way around (see <a href="models_gobstonestranslator.gobstonestranslator.html#fromtokens">fromTokens</a>), or event
+						translate between locales (see <a href="models_gobstonestranslator.gobstonestranslator.html#translate">translate</a>). The actions the translator is allowed
+						to perform depend on the configuration given at construction time to the translator,
+						so for example, a translator that was created without a destination language is not able
+						to translate from one language to another (See <a href="models_gobstonestranslator.gobstonestranslator.html#constructor">constructor</a> and the aforementioned
+					operations for more information)</p>
+			</div></section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">GobstonesTranslator</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="models_gobstonestranslator.gobstonestranslator.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="models_gobstonestranslator.gobstonestranslator.html#from" class="tsd-kind-icon">from</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="models_gobstonestranslator.gobstonestranslator.html#names" class="tsd-kind-icon">names</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="models_gobstonestranslator.gobstonestranslator.html#registeredlocales" class="tsd-kind-icon">registered<wbr>Locales</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="models_gobstonestranslator.gobstonestranslator.html#to" class="tsd-kind-icon">to</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="models_gobstonestranslator.gobstonestranslator.html#tokenprefix" class="tsd-kind-icon">token<wbr>Prefix</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="models_gobstonestranslator.gobstonestranslator.html#tokensuffix" class="tsd-kind-icon">token<wbr>Suffix</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="models_gobstonestranslator.gobstonestranslator.html#fromtokens" class="tsd-kind-icon">from<wbr>Tokens</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="models_gobstonestranslator.gobstonestranslator.html#fullmap" class="tsd-kind-icon">full<wbr>Map</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="models_gobstonestranslator.gobstonestranslator.html#getextendeddefinitionentries" class="tsd-kind-icon">get<wbr>Extended<wbr>Definition<wbr>Entries</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="models_gobstonestranslator.gobstonestranslator.html#registeralllocales" class="tsd-kind-icon">register<wbr>All<wbr>Locales</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="models_gobstonestranslator.gobstonestranslator.html#registerlocale" class="tsd-kind-icon">register<wbr>Locale</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="models_gobstonestranslator.gobstonestranslator.html#setlocale" class="tsd-kind-icon">set<wbr>Locale</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="models_gobstonestranslator.gobstonestranslator.html#totokens" class="tsd-kind-icon">to<wbr>Tokens</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="models_gobstonestranslator.gobstonestranslator.html#translate" class="tsd-kind-icon">translate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="models_gobstonestranslator.gobstonestranslator.html#translatewithmap" class="tsd-kind-icon">translate<wbr>With<wbr>Map</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Gobstones<wbr>Translator<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html" class="tsd-signature-type">GobstonesTranslatorOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="models_gobstonestranslator.gobstonestranslator.html" class="tsd-signature-type">GobstonesTranslator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Returns a new instance of <a href="models_gobstonestranslator.gobstonestranslator.html">GobstonesTranslator</a> (a translator, for short) with
+									the given set of options configured.</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+								<dl class="tsd-comment-tags"><dt>see</dt>
+									<dd><p><a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html">GobstonesTranslatorOptions</a> for learning more about all the available options
+										you can pass to the constructor.</p>
+									</dd><dt>throws</dt>
+									<dd><p><a href="models_errors.nonexistentlocalegiven.html">NonExistentLocaleGiven</a> if a name that is not a
+											built-in supported locale, nor a user defined locale is given to any of
+											<a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#from">GobstonesTranslatorOptions.from</a> or <a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#to">GobstonesTranslatorOptions.to</a>.
+											This error also arises when a user attempts to define a locale in the
+											<a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#locales">GobstonesTranslatorOptions.locales</a> option, that extends another locale, which
+										itself is not defined.</p>
+									</dd><dt>throws</dt>
+									<dd><p><a href="models_errors.localenamecollision.html">LocaleNameCollision</a> if a user provides a user defined
+											locale in the <a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#locales">GobstonesTranslatorOptions.locales</a> option that has a name
+											already defined (as a built-in supported locale or a user-defined locale previously
+										defined)</p>
+								</dd></dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html" class="tsd-signature-type">GobstonesTranslatorOptions</a></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The options to use to configure the translator.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="models_gobstonestranslator.gobstonestranslator.html" class="tsd-signature-type">GobstonesTranslator</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="from" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> from</h3>
+					<div class="tsd-signature tsd-kind-icon">from<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>The locale which this translator will assume as input
+								language when given Gobstones Localized code. This
+								is the source locale used in <a href="models_gobstonestranslator.gobstonestranslator.html#totokens">toTokens</a>
+							and as the source locale in <a href="models_gobstonestranslator.gobstonestranslator.html#translate">translate</a>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="names" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> names</h3>
+					<div class="tsd-signature tsd-kind-icon">names<span class="tsd-signature-symbol">:</span> <a href="helpers_bidirectionalmap.bidirectionalmap.html" class="tsd-signature-type">BidirectionalMap</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>A set of additional names for this translator used to translate
+								additional words besides the built-in commands,
+							expressions and keywords of the Gobstones Language.</p>
+						</div>
+						</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+						<dl class="tsd-comment-tags"><dt>see</dt>
+							<dd><p><a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#names">GobstonesTranslatorOptions.names</a> for more info.</p>
+						</dd></dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="registeredlocales" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> registered<wbr>Locales</h3>
+					<div class="tsd-signature tsd-kind-icon">registered<wbr>Locales<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">LanguageMap</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>A set of registered locales for this translator. This is automatically
+								populated with the built-in supported locales, and expanded with the user
+							defined locales given as argument to the constructor.</p>
+						</div>
+						</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+						<dl class="tsd-comment-tags"><dt>see</dt>
+							<dd><p><a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#locales">GobstonesTranslatorOptions.locales</a> for more info on adding custom locales.</p>
+						</dd></dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="to" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> to</h3>
+					<div class="tsd-signature tsd-kind-icon">to<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>The locale which this translator will
+								assume as output locale when given Gobstones Abstract code. This
+								is the destination locale used in <a href="models_gobstonestranslator.gobstonestranslator.html#fromtokens">fromTokens</a>
+							and as the destination locale in <a href="models_gobstonestranslator.gobstonestranslator.html#translate">translate</a>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="tokenprefix" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> token<wbr>Prefix</h3>
+					<div class="tsd-signature tsd-kind-icon">token<wbr>Prefix<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>This is the prefix attached or expected to every abstract token when reading or
+								writing to Gobstones Abstract code. This prefix defaults to <code>&#39;$&#39;</code> if
+								none is given, as this symbol is not a valid token of the Gobstones Localized code, and
+							avoids unexpected collisions.</p>
+						</div>
+						</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+						<dl class="tsd-comment-tags"><dt>see</dt>
+							<dd><p><a href="/#caveats">the &quot;Caveats&quot; section in the README</a> for more information about collisions.</p>
+						</dd></dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="tokensuffix" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> token<wbr>Suffix</h3>
+					<div class="tsd-signature tsd-kind-icon">token<wbr>Suffix<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>This is the suffix attached or expected to every abstract token when reading or
+								writing to Abstract Gobstones Language code. This suffix is defaulted to <code>&#39;$&#39;</code>, if
+								none is given, as this symbol is not a valid token of the Gobstones Language, and
+							avoids unexpected collisions.</p>
+						</div>
+						</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+						<dl class="tsd-comment-tags"><dt>see</dt>
+							<dd><p><a href="/#caveats">the &quot;Caveats&quot; section in the README</a> for more information about collisions.</p>
+						</dd></dl>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="fromtokens" class="tsd-anchor"></a>
+					<h3>from<wbr>Tokens</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Tokens<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/models_gobstonestranslator.translationoptions.html" class="tsd-signature-type">TranslationOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Convert a given code containing abstract tokens to a Gobstones Language code
+										in the <a href="models_gobstonestranslator.gobstonestranslator.html#to">to</a> language.
+										The input code should be a string containing Gobstones Code with abstract tokens instead
+									of language specific code (Abstract Gobstones Code).</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+								<dl class="tsd-comment-tags"><dt>throws</dt>
+									<dd><p><a href="../interfaces/translations_locale.locale.html#__type-5.notolanguagegiven">NoToLanguageGiven</a> if the translator
+										was configured without a <a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#to">to</a> option.</p>
+									</dd><dt>throws</dt>
+									<dd><p><a href="models_errors.nonamesgiven.html">NoNamesGiven</a> if the option
+											<a href="../interfaces/models_gobstonestranslator.translationoptions.html#includenames">includeNames</a> was given,
+											but no <a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#names">names</a> option was used when creating
+										this translator.</p>
+								</dd></dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The Gobstones Code to translate. Assumed to be Abstract Gobstones Code.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/models_gobstonestranslator.translationoptions.html" class="tsd-signature-type">TranslationOptions</a></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>A set of additional options for the conversion.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>A string containing Gobstones Code in <a href="models_gobstonestranslator.gobstonestranslator.html#to">to</a>.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="fullmap" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> full<wbr>Map</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">full<wbr>Map<span class="tsd-signature-symbol">(</span>useNames<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, namesMap<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>The map to use when performing a translation. The map to use depends on whether or
+									not the registered names are to be included.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>useNames: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>Whether or not to include the registered names in the final map.</p>
+									</div>
+								</li>
+								<li>
+									<h5>map: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The base map with translations from tokens to localized Gobstones Code
+										or vice versa to use in the translation.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> namesMap: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A new map containing all translations that are to be used.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="getextendeddefinitionentries" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Extended<wbr>Definition<wbr>Entries</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Extended<wbr>Definition<wbr>Entries<span class="tsd-signature-symbol">(</span>langDefinition<span class="tsd-signature-symbol">: </span><a href="../modules/models_localedefinition.html#localedefinition" class="tsd-signature-type">LocaleDefinition</a>, extendedLanguage<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Retrieve the set of entries constructed from the extension of the given language
+									definition with the given extended language.</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+								<dl class="tsd-comment-tags"><dt>throws</dt>
+									<dd><p><a href="models_errors.nonexistentlocalegiven.html">NonExistentLocaleGiven</a> if a locale name that is not a
+											built-in supported language, nor a user defined language is given to as the
+										<a href="../modules/models_localedefinition.html#localedefinition">LocaleDefinition.extends</a> option of the language definition.</p>
+								</dd></dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>langDefinition: <a href="../modules/models_localedefinition.html#localedefinition" class="tsd-signature-type">LocaleDefinition</a></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The language definition that extends another.</p>
+									</div>
+								</li>
+								<li>
+									<h5>extendedLanguage: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The extended language name.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="registeralllocales" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> register<wbr>All<wbr>Locales</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">register<wbr>All<wbr>Locales<span class="tsd-signature-symbol">(</span>languages<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../modules/models_localedefinition.html#localedefinition" class="tsd-signature-type">LocaleDefinition</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Register the given languages in this translator instance.</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+								<dl class="tsd-comment-tags"><dt>throws</dt>
+									<dd><p><a href="models_errors.nonexistentlocalegiven.html">NonExistentLocaleGiven</a> if a locale name that is not a
+											built-in supported language, nor a user defined language is given to as the
+											<a href="../modules/models_localedefinition.html#localedefinition">LocaleDefinition.extends</a> option in any of the language
+										definitions.</p>
+									</dd><dt>throws</dt>
+									<dd><p><a href="models_errors.localenamecollision.html">LocaleNameCollision</a> if any of the given languages
+										has a name that has been previously defined.</p>
+								</dd></dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>languages: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../modules/models_localedefinition.html#localedefinition" class="tsd-signature-type">LocaleDefinition</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>An object containing language names as keys, and language definitions
+										as their values.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="registerlocale" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> register<wbr>Locale</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Locale<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, langDefinition<span class="tsd-signature-symbol">: </span><a href="../modules/models_localedefinition.html#localedefinition" class="tsd-signature-type">LocaleDefinition</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Register a language to this instance existing languages.</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+								<dl class="tsd-comment-tags"><dt>throws</dt>
+									<dd><p><a href="models_errors.nonexistentlocalegiven.html">NonExistentLocaleGiven</a> if a locale name that is not a
+											built-in supported language, nor a user defined language is given to as the
+										<a href="../modules/models_localedefinition.html#localedefinition">LocaleDefinition.extends</a> option of the language definition.</p>
+									</dd><dt>throws</dt>
+									<dd><p><a href="models_errors.localenamecollision.html">LocaleNameCollision</a> if the given name has
+										been used in a previously registered language.</p>
+								</dd></dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The name of the language to register.</p>
+									</div>
+								</li>
+								<li>
+									<h5>langDefinition: <a href="../modules/models_localedefinition.html#localedefinition" class="tsd-signature-type">LocaleDefinition</a></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The language definition to register.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setlocale" class="tsd-anchor"></a>
+					<h3>set<wbr>Locale</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Locale<span class="tsd-signature-symbol">(</span>locale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Set a locale to the internal language manager of this library so
+									that error messages are displayed translated to the specific locale.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>locale: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The locale used to display error messages.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="totokens" class="tsd-anchor"></a>
+					<h3>to<wbr>Tokens</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Tokens<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/models_gobstonestranslator.translationoptions.html" class="tsd-signature-type">TranslationOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Convert a given code to a string containing abstract tokens for built-in commands
+										and expressions and language keywords.
+									The input code should be in the language this translator has configured as <a href="models_gobstonestranslator.gobstonestranslator.html#from">from</a>.</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+								<dl class="tsd-comment-tags"><dt>throws</dt>
+									<dd><p><a href="../interfaces/translations_locale.locale.html#__type-5.nofromlanguagegiven">NoFromLanguageGiven</a> if the translator
+										was configured without a <a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#from">from</a> option.</p>
+									</dd><dt>throws</dt>
+									<dd><p><a href="models_errors.nonamesgiven.html">NoNamesGiven</a> if the option
+											<a href="../interfaces/models_gobstonestranslator.translationoptions.html#includenames">includeNames</a> was given,
+											but no <a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#names">names</a> option was used when creating
+										this translator.</p>
+								</dd></dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The Gobstones Language code to translate. Assumed to be in <a href="models_gobstonestranslator.gobstonestranslator.html#from">from</a>.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/models_gobstonestranslator.translationoptions.html" class="tsd-signature-type">TranslationOptions</a></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>A set of additional options for the conversion.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>A string containing Abstract Gobstones Code.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="translate" class="tsd-anchor"></a>
+					<h3>translate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">translate<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/models_gobstonestranslator.translationoptions.html" class="tsd-signature-type">TranslationOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Translate a given code from the source language to the destination language.
+										The source language is the one used as <a href="models_gobstonestranslator.gobstonestranslator.html#from">from</a> when constructing the translator, and
+										the destination language is that used as <a href="models_gobstonestranslator.gobstonestranslator.html#to">to</a>.
+									The input should be Gobstones Language code in the source language.</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+								<dl class="tsd-comment-tags"><dt>throws</dt>
+									<dd><p><a href="../interfaces/translations_locale.locale.html#__type-5.nofromlanguagegiven">NoFromLanguageGiven</a> if the translator
+										was configured without a <a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#from">from</a> option.</p>
+									</dd><dt>throws</dt>
+									<dd><p><a href="../interfaces/translations_locale.locale.html#__type-5.notolanguagegiven">NoToLanguageGiven</a> if the translator
+										was configured without a <a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#to">to</a> option.</p>
+									</dd><dt>throws</dt>
+									<dd><p><a href="models_errors.nonamesgiven.html">NoNamesGiven</a> if the option
+											<a href="../interfaces/models_gobstonestranslator.translationoptions.html#includenames">includeNames</a> was given,
+											but no <a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html#names">names</a> option was used when creating
+										this translator.</p>
+								</dd></dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The Gobstones Language code to translate. Assumed to be in <a href="models_gobstonestranslator.gobstonestranslator.html#from">from</a>.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/models_gobstonestranslator.translationoptions.html" class="tsd-signature-type">TranslationOptions</a></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>A set of additional options for the conversion.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>A string containing Gobstones Code in <a href="models_gobstonestranslator.gobstonestranslator.html#to">to</a>.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="translatewithmap" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> translate<wbr>With<wbr>Map</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">translate<wbr>With<wbr>Map<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Translate a code string using a given set of word transformations to perform.
+										The translation can be perform between language specific localized Gobstones Language code
+										to Abstract Gobstones Code, the other way around, or between any to languages.
+									The code is generic enough to just consider the elements on the given map.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The code to translate, may be Abstract Gobstones Code or localized
+										Gobstones Code.</p>
+									</div>
+								</li>
+								<li>
+									<h5>map: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The replacement map, where each key corresponds to a word to translate,
+										and the value the corresponding translation for such a word.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>The translated code using the rules in the map.</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<!--{&quot;options&quot;:&quot;/Users/alanrodas/Proyectos/gobstones-server/gobstones-lang-intl&quot;,&quot;tsconfig&quot;:&quot;/Users/alanrodas/Proyectos/gobstones-server/gobstones-lang-intl&quot;,&quot;entryPoints&quot;:[&quot;./src&quot;],&quot;exclude&quot;:[&quot;**/*.test.ts&quot;,&quot;**/index.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:true,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:false,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:true,&quot;includes&quot;:&quot;./src&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;docs&quot;,&quot;json&quot;:&quot;&quot;,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:true,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:true,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false,&quot;links&quot;:[{&quot;label&quot;:&quot;Repository&quot;,&quot;url&quot;:&quot;https://github.com/gobstones/gobstones-lang-intl&quot;},{&quot;label&quot;:&quot;Gobstones Docs&quot;,&quot;url&quot;:&quot;https://dev.gobstones.org&quot;},{&quot;label&quot;:&quot;Contribution Guidelines&quot;,&quot;url&quot;:&quot;https://dev.gobstones.org/contribution-guidelines&quot;}],&quot;outline&quot;:[{&quot;Public Modules&quot;:{&quot;GobstonesTranslator&quot;:&quot;models_GobstonesTranslator&quot;,&quot;LocaleDefinition&quot;:&quot;models_LocaleDefinition&quot;,&quot;Errors&quot;:&quot;models_Errors&quot;},&quot;Internal Modules&quot;:{&quot;StringReader&quot;:&quot;helpers_StringReader&quot;,&quot;BidirectionalMap&quot;:&quot;helpers_BidirectionalMap&quot;,&quot;Translation&quot;:&quot;translations_Locale&quot;,&quot;Locale&quot;:&quot;translations_Locale&quot;}}]}-->
+		</div>
+		<div class="col-2 col-menu secondary-menu">
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module root">
+						<a href="models_gobstonestranslator.gobstonestranslator.html" class="tsd-kind-icon">Gobstones<wbr>Translator</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#from" class="tsd-kind-icon">from</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#names" class="tsd-kind-icon">names</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#registeredlocales" class="tsd-kind-icon">registered<wbr>Locales</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#to" class="tsd-kind-icon">to</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#tokenprefix" class="tsd-kind-icon">token<wbr>Prefix</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#tokensuffix" class="tsd-kind-icon">token<wbr>Suffix</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#fromtokens" class="tsd-kind-icon">from<wbr>Tokens</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#fullmap" class="tsd-kind-icon">full<wbr>Map</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#getextendeddefinitionentries" class="tsd-kind-icon">get<wbr>Extended<wbr>Definition<wbr>Entries</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#registeralllocales" class="tsd-kind-icon">register<wbr>All<wbr>Locales</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#registerlocale" class="tsd-kind-icon">register<wbr>Locale</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#setlocale" class="tsd-kind-icon">set<wbr>Locale</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#totokens" class="tsd-kind-icon">to<wbr>Tokens</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#translate" class="tsd-kind-icon">translate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="models_gobstonestranslator.gobstonestranslator.html#translatewithmap" class="tsd-kind-icon">translate<wbr>With<wbr>Map</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/models_gobstonestranslator.gobstonestranslatoroptions.html" class="tsd-kind-icon">Gobstones<wbr>Translator<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/models_gobstonestranslator.translationoptions.html" class="tsd-kind-icon">Translation<wbr>Options</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

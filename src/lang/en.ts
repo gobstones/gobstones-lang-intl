@@ -5,7 +5,7 @@
  *
  * @packageDocumentation
  */
-import { LocaleDefinition } from '../models/Definition';
+import { LocaleDefinition } from '../models/LocaleDefinition';
 
 /**
  * The english translation
@@ -76,8 +76,8 @@ export default {
     GBS_COMMAND_GRAB: 'Grab',
     GBS_COMMAND_DROP: 'Drop',
     GBS_COMMAND_MOVE: 'Move',
-    GBS_COMMAND_MOVETOEDGE: 'MoveToEdge',
-    GBS_COMMAND_CLEANBOARD: 'CleanBoard',
+    GBS_COMMAND_MOVETOEDGE: 'GoToEdge',
+    GBS_COMMAND_CLEANBOARD: 'ClearBoard',
     /** Built-in expressions */
     GBS_EXPRESSION_NUMSTONES: 'numStones',
     GBS_EXPRESSION_HASSTONES: 'hasStones',

@@ -5,7 +5,7 @@
  *
  * @packageDocumentation
  */
-import { LocaleDefinition } from '../models/Definition';
+import { LocaleDefinition } from '../models/LocaleDefinition';
 
 /**
  * The Spanish translation

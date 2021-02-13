@@ -12,8 +12,15 @@ const commonConfig = {
             }
         ]
     },
+
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js'],
+        fallback: {
+            // eslint-disable-next-line camelcase
+            child_process: false,
+            fs: false,
+            path: false
+        }
     }
 };
 
@@ -26,7 +33,7 @@ const libraryTarget = Object.assign({}, commonConfig, {
         libraryTarget: 'umd',
         library: 'gobstones-lang-intl',
         umdNamedDefine: true,
-        globalObject: 'typeof self !== \'undefined\' ? self : this'
+        globalObject: "typeof self !== 'undefined' ? self : this"
     }
 });
 
@@ -38,9 +45,7 @@ const cliTarget = Object.assign({}, commonConfig, {
         path: path.resolve(__dirname, 'dist'),
         libraryTarget: 'commonjs'
     },
-    plugins: [
-        new webpack.BannerPlugin({ banner: "#!/usr/bin/env node", raw: true }),
-    ]
+    plugins: [new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true })]
 });
 
 module.exports = [libraryTarget, cliTarget];

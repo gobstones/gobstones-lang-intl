@@ -58,7 +58,7 @@ export class NonExistentLocaleGiven extends GobstonesTranslationError {
  * The NoFromLocaleGiven arises when a [[GobstonesTranslator.translate | translation]]
  * or a [[GobstonesTranslator.toTokens | passing to abstract tokens]] is performed on
  * a [[GobstonesTranslator | translator]] that has been created without a
- * [[GobstonesTranslatorOption.from]] option.
+ * [[GobstonesTranslatorOptions.from]] option.
  *
  * @see [[GobstonesTranslator.toTokens]]
  * @see [[GobstonesTranslator.translate]]
@@ -74,7 +74,7 @@ export class NoFromLocaleGiven extends GobstonesTranslationError {
  * The NoToLocaleGiven arises when a [[GobstonesTranslator.translate | translation]]
  * or a [[GobstonesTranslator.fromTokens | reading from abstract tokens]] is performed on
  * a [[GobstonesTranslator | translator]] that has been created without a
- * [[GobstonesTranslatorOption.to]] option.
+ * [[GobstonesTranslatorOptions.to]] option.
  *
  * @see [[GobstonesTranslator.fromTokens]]
  * @see [[GobstonesTranslator.translate]]
@@ -92,7 +92,7 @@ export class NoToLocaleGiven extends GobstonesTranslationError {
  * a [[GobstonesTranslator.fromTokens | writing to abstract tokens]] is performed on
  * a [[GobstonesTranslator | translator]] that has been created with the
  * [[TranslationOptions.includeNames | includeNames]] option set, but created without
- * the [[GobstonesTranslatorOption.names]] option.
+ * the [[GobstonesTranslatorOptions.names]] option.
  *
  * @see [[GobstonesTranslator.toTokens]]
  * @see [[GobstonesTranslator.fromTokens]]
@@ -107,7 +107,7 @@ export class NoNamesGiven extends GobstonesTranslationError {
 
 /**
  * The LocaleNameCollision arises when a [[GobstonesTranslator]] is created with
- * the [[GobstonesTranslatorOption.locales]] option set, and having a locale name
+ * the [[GobstonesTranslatorOptions.locales]] option set, and having a locale name
  * that has been previously defined as a built-in language name.
  *
  * @see [[GobstonesTranslator.constructor]]

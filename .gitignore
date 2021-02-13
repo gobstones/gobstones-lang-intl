@@ -15,6 +15,3 @@ tsconfig.build.json
 
 # IDE #
 .idea/
-
-# Generated docs
-docs

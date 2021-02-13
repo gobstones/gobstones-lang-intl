@@ -31,11 +31,11 @@ The output is what is expected internally by the parser and other tools. To prod
 
 
 ```typescript
-import GobstonesLangIntl from 'gobstones-lang-intl';
+import GobstonesTranslator from 'gobstones-lang-intl';
 
-let gobstonesLangIntl = new GobstonesLangIntl({fromLang: 'es'});
+let gobstonesTranslator = new GobstonesTranslator({from: 'es'});
 
-let codeWithKeywords = gobstonesLangIntl.toKeywords(codeInSpanish);
+let codeWithKeywords = gobstonesTranslator.toKeywords(codeInSpanish);
 ```
 
 #### From keywords to code
@@ -54,17 +54,17 @@ program { Poner(Rojo) }
 
 and to english as:
 ```
-program { Grab(Red) }
+program { Drop(Red) }
 ```
 
 For this behavior use the library in the following way:
 
 ```typescript
-import GobstonesLangIntl from 'gobstones-lang-intl';
+import GobstonesTranslator from 'gobstones-lang-intl';
 
-let gobstonesLangIntl = new GobstonesLangIntl({toLang: 'es'});
+let gobstonesTranslator = new GobstonesTranslator({to: 'es'});
 
-let codeInSpanish = gobstonesLangIntl.fromKeywords(codeWithKeywords);
+let codeInSpanish = gobstonesTranslator.fromKeywords(codeWithKeywords);
 ```
 
 
@@ -73,18 +73,18 @@ let codeInSpanish = gobstonesLangIntl.fromKeywords(codeWithKeywords);
 You can to the trip from code to keywords, and to keywords from code, in a two way trip, but we provide a way to do it easily by providing both `fromLang` and `toLang` to the constructor and calling translate:
 
 ```typescript
-import GobstonesLangIntl from 'gobstones-lang-intl';
+import GobstonesTranslator from 'gobstones-lang-intl';
 
-let gobstonesLangIntl = new GobstonesLangIntl({fromLang: 'es', toLang: 'en'});
+let gobstonesTranslator = new GobstonesTranslator({from: 'es', to: 'en'});
 
-let codeInEnglish = gobstonesLangIntl.translate(codeInSpanish);
+let codeInEnglish = gobstonesTranslator.translate(codeInSpanish);
 ```
 
 Note that you cannot call translate if you didn't provide both languages. See the errors section for more information about that.
 
 #### Translating procedure and function names
 
-You can pass a `namesMatch` argument, as a `Record<string, string>` object, such that the keys are the names of procedures, functions and others in the from language, and the value the string that you want to use in the to language. This allows you to translate more complex code, such as:
+You can pass a `names` argument, as a `Record<string, string>` object, such that the keys are the names of procedures, functions and others in the from language, and the value the string that you want to use in the to language. This allows you to translate more complex code, such as:
 
 ```
 program {
@@ -101,18 +101,18 @@ procedure Poner3BolitasDeColor_(colorAPoner) {
 can be translated to English by using the library as follows:
 
 ```typescript
-import GobstonesLangIntl from 'gobstones-lang-intl';
+import GobstonesTranslator from 'gobstones-lang-intl';
 
-let gobstonesLangIntl = new GobstonesLangIntl({
-    fromLang: 'es',
-    toLang: 'en',
+let gobstonesTranslator = new GobstonesTranslator({
+    from: 'es',
+    to: 'en',
     names: {
         'Poner3BolitasDeColor_': 'Grab3StonesOfColor_',
         'colorAPoner': 'colorToGrab'
     }
 });
 
-let codeInEnglish = gobstonesLangIntl.translate(codeInSpanish, {includeNames: true});
+let codeInEnglish = gobstonesTranslator.translate(codeInSpanish, {includeNames: true});
 ```
 
 This will produce the following output:
@@ -134,9 +134,9 @@ As a caveat, note that there is no context detection of the name usage, and the 
 Also note that you can produce keywords including the name replacement by passing `includeNames` as true to `toKeywords` as well.
 
 ```typescript
-import GobstonesLangIntl from 'gobstones-lang-intl';
+import GobstonesTranslator from 'gobstones-lang-intl';
 
-let gobstonesLangIntl = new GobstonesLangIntl({
+let gobstonesTranslator = new GobstonesTranslator({
     fromLang: 'es',
     toLang: 'en',
     names: {
@@ -146,7 +146,7 @@ let gobstonesLangIntl = new GobstonesLangIntl({
 });
 
 let codeWithKeywordsWithEnglishNames =
-    gobstonesLangIntl.toKeywords(codeInSpanish, {includeNames: true});
+    gobstonesTranslator.toKeywords(codeInSpanish, {includeNames: true});
 ```
 
 ## Custom Language
@@ -154,9 +154,9 @@ let codeWithKeywordsWithEnglishNames =
 You can use a custom language by providing a `languages` object, where each key corresponds to the locale name, and as a value, you can use an language object, containing the gobstones keywords as keys, and the string to use in that language as value. A language object may include the additional `extends` key, to specify that a language is just an extension of another, in which case, the defined translations are overwritten from the extended language.
 
 ```typescript
-import GobstonesLangIntl from 'gobstones-lang-intl';
+import GobstonesTranslator from 'gobstones-lang-intl';
 
-let gobstonesLangIntl = new GobstonesLangIntl({
+let gobstonesTranslator = new GobstonesTranslator({
     fromLang: 'en-GB',
     toLang: 'fr',
     languages: {
@@ -173,7 +173,7 @@ let gobstonesLangIntl = new GobstonesLangIntl({
 });
 
 let codeInFrench =
-    gobstonesLangIntl.translate(codeInBritishEnglish);
+    gobstonesTranslator.translate(codeInBritishEnglish);
 ```
 
 Note that if your language does not extend another, you must specify all keywords of the Gobstones Language in order for the translation to be correct. Failing to do so will produce an error.

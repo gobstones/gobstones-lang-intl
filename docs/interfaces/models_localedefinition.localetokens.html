@@ -1,0 +1,1023 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>LocaleTokens | @gobstones/gobstones-lang-intl - v0.1.0</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<ul class="results-priority" style="display:none">
+					</ul>
+					<a href="../index.html" class="title">@gobstones/gobstones-lang-intl - v0.1.0</a>
+					&emsp;<a href="https://github.com/gobstones/gobstones-lang-intl" class="title">Repository</a>
+					&emsp;<a href="https://dev.gobstones.org" class="title">Gobstones Docs</a>
+					&emsp;<a href="https://dev.gobstones.org/contribution-guidelines" class="title">Contribution Guidelines</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules/models_localedefinition.html">models/LocaleDefinition</a>
+				</li>
+				<li>
+					<a href="models_localedefinition.localetokens.html">LocaleTokens</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation outline primary">
+				<a style="margin-left:0em" href="../globals.html">Globals</a>
+				<ul style="display:none">
+					{&quot;Public Modules&quot;:{&quot;GobstonesTranslator&quot;:&quot;models_GobstonesTranslator&quot;,&quot;LocaleDefinition&quot;:&quot;models_LocaleDefinition&quot;,&quot;Errors&quot;:&quot;models_Errors&quot;},&quot;Internal Modules&quot;:{&quot;StringReader&quot;:&quot;helpers_StringReader&quot;,&quot;BidirectionalMap&quot;:&quot;helpers_BidirectionalMap&quot;,&quot;Translation&quot;:&quot;translations_Locale&quot;,&quot;Locale&quot;:&quot;translations_Locale&quot;}}
+				</ul>
+			</nav>
+		</div>
+		<div class="col-7 offset-3 col-content">
+			<h1>Interface LocaleTokens</h1>
+			<section class="tsd-panel tsd-comment"><div class="tsd-comment tsd-typography tsd-comment-shorttext">
+					<div class="lead">
+						<p>This interface represents all the messages a translation should provide
+						to comply with a Gobstones Language Translation.</p>
+					</div>
+					</div><div class="tsd-comment tsd-typography tsd-comment-text">
+					<p>If you wish to extend an already registered locale, you may want to
+						comply with <a href="../modules/models_localedefinition.html#localedefinition">LocaleDefinition</a> instead of this interface, which allows
+					for partially defining some messages while reusing others from the extended locale.</p>
+					<p>Each attribute on this interface corresponds to the name of an Abstract Token of the
+						Gobstones Language, and they all have type string, as an object that satisfies
+					this interface should provide each attribute with the corresponding translation as value.</p>
+					<p>You can check the code in the repository for examples of translations.</p>
+					</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+					<dl class="tsd-comment-tags"><dt>see</dt>
+						<dd><p><a href="https://github.com/gobstones/gobstones-lang-intl/lang/en.ts" class="external">English translation</a></p>
+						</dd><dt>see</dt>
+						<dd><p><a href="https://github.com/gobstones/gobstones-lang-intl/lang/es.ts" class="external">Spanish translation</a></p>
+					</dd></dl>
+			</div></section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">LocaleTokens</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_assign_let" class="tsd-kind-icon">GBS_<wbr>ASSIGN_<wbr>LET</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_bool_false" class="tsd-kind-icon">GBS_<wbr>BOOL_<wbr>FALSE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_bool_true" class="tsd-kind-icon">GBS_<wbr>BOOL_<wbr>TRUE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_color_black" class="tsd-kind-icon">GBS_<wbr>COLOR_<wbr>BLACK</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_color_blue" class="tsd-kind-icon">GBS_<wbr>COLOR_<wbr>BLUE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_color_green" class="tsd-kind-icon">GBS_<wbr>COLOR_<wbr>GREEN</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_color_red" class="tsd-kind-icon">GBS_<wbr>COLOR_<wbr>RED</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_command_cleanboard" class="tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>CLEANBOARD</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_command_drop" class="tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>DROP</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_command_grab" class="tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>GRAB</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_command_move" class="tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>MOVE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_command_movetoedge" class="tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>MOVETOEDGE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_choose" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>CHOOSE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_default" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>DEFAULT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_else" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>ELSE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_elseif" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>ELSEIF</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_foreach" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>FOREACH</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_if" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>IF</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_in" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>IN</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_matching" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>MATCHING</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_on" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>ON</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_otherwise" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>OTHERWISE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_repeat" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>REPEAT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_select" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>SELECT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_switch" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>SWITCH</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_then" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>THEN</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_to" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>TO</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_when" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>WHEN</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_control_while" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>WHILE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_definition_case" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>CASE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_definition_field" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>FIELD</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_definition_function" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>FUNCTION</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_definition_interactive" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>INTERACTIVE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_definition_is" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>IS</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_definition_procedure" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>PROCEDURE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_definition_program" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>PROGRAM</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_definition_record" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>RECORD</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_definition_return" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>RETURN</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_definition_type" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>TYPE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_definition_variant" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>VARIANT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_dir_east" class="tsd-kind-icon">GBS_<wbr>DIR_<wbr>EAST</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_dir_north" class="tsd-kind-icon">GBS_<wbr>DIR_<wbr>NORTH</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_dir_south" class="tsd-kind-icon">GBS_<wbr>DIR_<wbr>SOUTH</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_dir_west" class="tsd-kind-icon">GBS_<wbr>DIR_<wbr>WEST</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_error_command_boom" class="tsd-kind-icon">GBS_<wbr>ERROR_<wbr>COMMAND_<wbr>BOOM</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_error_expression_boom" class="tsd-kind-icon">GBS_<wbr>ERROR_<wbr>EXPRESSION_<wbr>BOOM</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_error_typecheck" class="tsd-kind-icon">GBS_<wbr>ERROR_<wbr>TYPECHECK</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_event_init" class="tsd-kind-icon">GBS_<wbr>EVENT_<wbr>INIT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_event_timeout" class="tsd-kind-icon">GBS_<wbr>EVENT_<wbr>TIMEOUT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_canmove" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>CANMOVE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_hasstones" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>HASSTONES</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_head" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>HEAD</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_init" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>INIT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_isempty" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>ISEMPTY</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_last" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>LAST</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_maxbool" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MAXBOOL</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_maxcolor" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MAXCOLOR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_maxdir" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MAXDIR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_minbool" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MINBOOL</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_mincolor" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MINCOLOR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_mindir" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MINDIR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_next" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>NEXT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_numstones" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>NUMSTONES</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_opposite" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>OPPOSITE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_prev" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>PREV</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_expression_tail" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>TAIL</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_operator_div" class="tsd-kind-icon">GBS_<wbr>OPERATOR_<wbr>DIV</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_operator_mod" class="tsd-kind-icon">GBS_<wbr>OPERATOR_<wbr>MOD</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_operator_not" class="tsd-kind-icon">GBS_<wbr>OPERATOR_<wbr>NOT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_type_bool" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>BOOL</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_type_color" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>COLOR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_type_dir" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>DIR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_type_event" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>EVENT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_type_list" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>LIST</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_type_number" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>NUMBER</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_type_record" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>RECORD</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_type_string" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>STRING</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_type_tuple" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>TUPLE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="models_localedefinition.localetokens.html#gbs_type_variant" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>VARIANT</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_assign_let" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>ASSIGN_<wbr>LET</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>ASSIGN_<wbr>LET<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_bool_false" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>BOOL_<wbr>FALSE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>BOOL_<wbr>FALSE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_bool_true" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>BOOL_<wbr>TRUE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>BOOL_<wbr>TRUE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_color_black" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>COLOR_<wbr>BLACK</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>COLOR_<wbr>BLACK<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_color_blue" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>COLOR_<wbr>BLUE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>COLOR_<wbr>BLUE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_color_green" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>COLOR_<wbr>GREEN</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>COLOR_<wbr>GREEN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_color_red" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>COLOR_<wbr>RED</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>COLOR_<wbr>RED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_command_cleanboard" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>COMMAND_<wbr>CLEANBOARD</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>CLEANBOARD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_command_drop" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>COMMAND_<wbr>DROP</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>DROP<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_command_grab" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>COMMAND_<wbr>GRAB</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>GRAB<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_command_move" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>COMMAND_<wbr>MOVE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>MOVE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_command_movetoedge" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>COMMAND_<wbr>MOVETOEDGE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>MOVETOEDGE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_choose" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>CHOOSE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>CHOOSE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_default" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>DEFAULT</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>DEFAULT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_else" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>ELSE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>ELSE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_elseif" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>ELSEIF</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>ELSEIF<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_foreach" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>FOREACH</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>FOREACH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_if" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>IF</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>IF<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_in" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>IN</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>IN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_matching" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>MATCHING</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>MATCHING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_on" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>ON</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>ON<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_otherwise" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>OTHERWISE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>OTHERWISE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_repeat" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>REPEAT</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>REPEAT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_select" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>SELECT</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>SELECT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_switch" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>SWITCH</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>SWITCH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_then" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>THEN</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>THEN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_to" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>TO</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>TO<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_when" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>WHEN</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>WHEN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_control_while" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>CONTROL_<wbr>WHILE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>WHILE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_definition_case" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DEFINITION_<wbr>CASE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>CASE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_definition_field" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DEFINITION_<wbr>FIELD</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>FIELD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_definition_function" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DEFINITION_<wbr>FUNCTION</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>FUNCTION<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_definition_interactive" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DEFINITION_<wbr>INTERACTIVE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>INTERACTIVE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_definition_is" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DEFINITION_<wbr>IS</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>IS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_definition_procedure" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DEFINITION_<wbr>PROCEDURE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>PROCEDURE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_definition_program" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DEFINITION_<wbr>PROGRAM</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>PROGRAM<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_definition_record" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DEFINITION_<wbr>RECORD</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>RECORD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_definition_return" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DEFINITION_<wbr>RETURN</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>RETURN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_definition_type" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DEFINITION_<wbr>TYPE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>TYPE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_definition_variant" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DEFINITION_<wbr>VARIANT</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>VARIANT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_dir_east" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DIR_<wbr>EAST</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DIR_<wbr>EAST<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_dir_north" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DIR_<wbr>NORTH</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DIR_<wbr>NORTH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_dir_south" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DIR_<wbr>SOUTH</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DIR_<wbr>SOUTH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_dir_west" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>DIR_<wbr>WEST</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>DIR_<wbr>WEST<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_error_command_boom" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>ERROR_<wbr>COMMAND_<wbr>BOOM</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>ERROR_<wbr>COMMAND_<wbr>BOOM<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_error_expression_boom" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>ERROR_<wbr>EXPRESSION_<wbr>BOOM</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>ERROR_<wbr>EXPRESSION_<wbr>BOOM<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_error_typecheck" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>ERROR_<wbr>TYPECHECK</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>ERROR_<wbr>TYPECHECK<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_event_init" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EVENT_<wbr>INIT</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EVENT_<wbr>INIT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_event_timeout" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EVENT_<wbr>TIMEOUT</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EVENT_<wbr>TIMEOUT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_canmove" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>CANMOVE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>CANMOVE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_hasstones" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>HASSTONES</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>HASSTONES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_head" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>HEAD</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>HEAD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_init" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>INIT</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>INIT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_isempty" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>ISEMPTY</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>ISEMPTY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_last" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>LAST</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>LAST<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_maxbool" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>MAXBOOL</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MAXBOOL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_maxcolor" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>MAXCOLOR</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MAXCOLOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_maxdir" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>MAXDIR</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MAXDIR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_minbool" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>MINBOOL</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MINBOOL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_mincolor" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>MINCOLOR</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MINCOLOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_mindir" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>MINDIR</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MINDIR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_next" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>NEXT</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>NEXT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_numstones" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>NUMSTONES</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>NUMSTONES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Built-in expressions</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_opposite" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>OPPOSITE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>OPPOSITE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_prev" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>PREV</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>PREV<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_expression_tail" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>EXPRESSION_<wbr>TAIL</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>TAIL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_operator_div" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>OPERATOR_<wbr>DIV</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>OPERATOR_<wbr>DIV<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_operator_mod" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>OPERATOR_<wbr>MOD</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>OPERATOR_<wbr>MOD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_operator_not" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>OPERATOR_<wbr>NOT</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>OPERATOR_<wbr>NOT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_type_bool" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>TYPE_<wbr>BOOL</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>TYPE_<wbr>BOOL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_type_color" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>TYPE_<wbr>COLOR</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>TYPE_<wbr>COLOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_type_dir" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>TYPE_<wbr>DIR</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>TYPE_<wbr>DIR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_type_event" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>TYPE_<wbr>EVENT</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>TYPE_<wbr>EVENT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_type_list" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>TYPE_<wbr>LIST</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>TYPE_<wbr>LIST<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_type_number" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>TYPE_<wbr>NUMBER</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>TYPE_<wbr>NUMBER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_type_record" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>TYPE_<wbr>RECORD</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>TYPE_<wbr>RECORD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_type_string" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>TYPE_<wbr>STRING</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>TYPE_<wbr>STRING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_type_tuple" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>TYPE_<wbr>TUPLE</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>TYPE_<wbr>TUPLE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="gbs_type_variant" class="tsd-anchor"></a>
+					<h3>GBS_<wbr>TYPE_<wbr>VARIANT</h3>
+					<div class="tsd-signature tsd-kind-icon">GBS_<wbr>TYPE_<wbr>VARIANT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+			</section>
+			<!--{&quot;options&quot;:&quot;/Users/alanrodas/Proyectos/gobstones-server/gobstones-lang-intl&quot;,&quot;tsconfig&quot;:&quot;/Users/alanrodas/Proyectos/gobstones-server/gobstones-lang-intl&quot;,&quot;entryPoints&quot;:[&quot;./src&quot;],&quot;exclude&quot;:[&quot;**/*.test.ts&quot;,&quot;**/index.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:true,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:false,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:true,&quot;includes&quot;:&quot;./src&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;docs&quot;,&quot;json&quot;:&quot;&quot;,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:true,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:true,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false,&quot;links&quot;:[{&quot;label&quot;:&quot;Repository&quot;,&quot;url&quot;:&quot;https://github.com/gobstones/gobstones-lang-intl&quot;},{&quot;label&quot;:&quot;Gobstones Docs&quot;,&quot;url&quot;:&quot;https://dev.gobstones.org&quot;},{&quot;label&quot;:&quot;Contribution Guidelines&quot;,&quot;url&quot;:&quot;https://dev.gobstones.org/contribution-guidelines&quot;}],&quot;outline&quot;:[{&quot;Public Modules&quot;:{&quot;GobstonesTranslator&quot;:&quot;models_GobstonesTranslator&quot;,&quot;LocaleDefinition&quot;:&quot;models_LocaleDefinition&quot;,&quot;Errors&quot;:&quot;models_Errors&quot;},&quot;Internal Modules&quot;:{&quot;StringReader&quot;:&quot;helpers_StringReader&quot;,&quot;BidirectionalMap&quot;:&quot;helpers_BidirectionalMap&quot;,&quot;Translation&quot;:&quot;translations_Locale&quot;,&quot;Locale&quot;:&quot;translations_Locale&quot;}}]}-->
+		</div>
+		<div class="col-2 col-menu secondary-menu">
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module root">
+						<a href="models_localedefinition.localetokens.html" class="tsd-kind-icon">Locale<wbr>Tokens</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_assign_let" class="tsd-kind-icon">GBS_<wbr>ASSIGN_<wbr>LET</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_bool_false" class="tsd-kind-icon">GBS_<wbr>BOOL_<wbr>FALSE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_bool_true" class="tsd-kind-icon">GBS_<wbr>BOOL_<wbr>TRUE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_color_black" class="tsd-kind-icon">GBS_<wbr>COLOR_<wbr>BLACK</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_color_blue" class="tsd-kind-icon">GBS_<wbr>COLOR_<wbr>BLUE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_color_green" class="tsd-kind-icon">GBS_<wbr>COLOR_<wbr>GREEN</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_color_red" class="tsd-kind-icon">GBS_<wbr>COLOR_<wbr>RED</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_command_cleanboard" class="tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>CLEANBOARD</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_command_drop" class="tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>DROP</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_command_grab" class="tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>GRAB</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_command_move" class="tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>MOVE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_command_movetoedge" class="tsd-kind-icon">GBS_<wbr>COMMAND_<wbr>MOVETOEDGE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_choose" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>CHOOSE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_default" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>DEFAULT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_else" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>ELSE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_elseif" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>ELSEIF</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_foreach" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>FOREACH</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_if" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>IF</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_in" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>IN</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_matching" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>MATCHING</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_on" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>ON</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_otherwise" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>OTHERWISE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_repeat" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>REPEAT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_select" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>SELECT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_switch" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>SWITCH</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_then" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>THEN</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_to" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>TO</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_when" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>WHEN</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_control_while" class="tsd-kind-icon">GBS_<wbr>CONTROL_<wbr>WHILE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_definition_case" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>CASE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_definition_field" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>FIELD</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_definition_function" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>FUNCTION</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_definition_interactive" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>INTERACTIVE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_definition_is" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>IS</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_definition_procedure" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>PROCEDURE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_definition_program" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>PROGRAM</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_definition_record" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>RECORD</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_definition_return" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>RETURN</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_definition_type" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>TYPE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_definition_variant" class="tsd-kind-icon">GBS_<wbr>DEFINITION_<wbr>VARIANT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_dir_east" class="tsd-kind-icon">GBS_<wbr>DIR_<wbr>EAST</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_dir_north" class="tsd-kind-icon">GBS_<wbr>DIR_<wbr>NORTH</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_dir_south" class="tsd-kind-icon">GBS_<wbr>DIR_<wbr>SOUTH</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_dir_west" class="tsd-kind-icon">GBS_<wbr>DIR_<wbr>WEST</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_error_command_boom" class="tsd-kind-icon">GBS_<wbr>ERROR_<wbr>COMMAND_<wbr>BOOM</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_error_expression_boom" class="tsd-kind-icon">GBS_<wbr>ERROR_<wbr>EXPRESSION_<wbr>BOOM</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_error_typecheck" class="tsd-kind-icon">GBS_<wbr>ERROR_<wbr>TYPECHECK</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_event_init" class="tsd-kind-icon">GBS_<wbr>EVENT_<wbr>INIT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_event_timeout" class="tsd-kind-icon">GBS_<wbr>EVENT_<wbr>TIMEOUT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_canmove" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>CANMOVE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_hasstones" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>HASSTONES</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_head" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>HEAD</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_init" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>INIT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_isempty" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>ISEMPTY</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_last" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>LAST</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_maxbool" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MAXBOOL</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_maxcolor" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MAXCOLOR</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_maxdir" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MAXDIR</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_minbool" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MINBOOL</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_mincolor" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MINCOLOR</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_mindir" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>MINDIR</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_next" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>NEXT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_numstones" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>NUMSTONES</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_opposite" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>OPPOSITE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_prev" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>PREV</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_expression_tail" class="tsd-kind-icon">GBS_<wbr>EXPRESSION_<wbr>TAIL</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_operator_div" class="tsd-kind-icon">GBS_<wbr>OPERATOR_<wbr>DIV</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_operator_mod" class="tsd-kind-icon">GBS_<wbr>OPERATOR_<wbr>MOD</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_operator_not" class="tsd-kind-icon">GBS_<wbr>OPERATOR_<wbr>NOT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_type_bool" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>BOOL</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_type_color" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>COLOR</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_type_dir" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>DIR</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_type_event" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>EVENT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_type_list" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>LIST</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_type_number" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>NUMBER</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_type_record" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>RECORD</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_type_string" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>STRING</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_type_tuple" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>TUPLE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="models_localedefinition.localetokens.html#gbs_type_variant" class="tsd-kind-icon">GBS_<wbr>TYPE_<wbr>VARIANT</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module root">
+						<a href="../modules/models_localedefinition.html#localedefinition" class="tsd-kind-icon">Locale<wbr>Definition</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

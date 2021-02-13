@@ -21,11 +21,15 @@ export class StringReader {
     /**
      * The string given to the reader.
      */
-    private str: string;
+    public str: string;
     /**
      * The current index where the reader is at.
      */
-    private index: number;
+    public index: number;
+    /**
+     * The regexp used to detect when a word ends
+     */
+    private wordEnders: RegExp;
 
     /**
      * Create a new instance of a StringReader for the given string.
@@ -33,9 +37,10 @@ export class StringReader {
      *
      * @param str The string this reader should operate uppon.
      */
-    public constructor(str: string) {
+    public constructor(str: string, wordEnders: RegExp = /[^ \n\t()[\]{},;.:=><-]/) {
         this.str = str;
         this.index = 0;
+        this.wordEnders = wordEnders;
     }
 
     /**
@@ -127,6 +132,6 @@ export class StringReader {
      * @param char
      */
     private isAlpha(char: string): boolean {
-        return /[^ \n\t()[\]{}]/.test(char);
+        return this.wordEnders.test(char);
     }
 }

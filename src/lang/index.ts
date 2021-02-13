@@ -1,7 +1,7 @@
-import es from './es';
 import en from './en';
+import es from './es';
 
-export { LocaleDefinition as LanguageDefinition } from '../models/Definition';
+export { LocaleDefinition } from '../models/LocaleDefinition';
 
 export const defaultLocales = {
     en,

@@ -1,0 +1,442 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>StringReader | @gobstones/gobstones-lang-intl - v0.1.0</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<ul class="results-priority" style="display:none">
+					</ul>
+					<a href="../index.html" class="title">@gobstones/gobstones-lang-intl - v0.1.0</a>
+					&emsp;<a href="https://github.com/gobstones/gobstones-lang-intl" class="title">Repository</a>
+					&emsp;<a href="https://dev.gobstones.org" class="title">Gobstones Docs</a>
+					&emsp;<a href="https://dev.gobstones.org/contribution-guidelines" class="title">Contribution Guidelines</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules/helpers_stringreader.html">helpers/StringReader</a>
+				</li>
+				<li>
+					<a href="helpers_stringreader.stringreader.html">StringReader</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation outline primary">
+				<a style="margin-left:0em" href="../globals.html">Globals</a>
+				<ul style="display:none">
+					{&quot;Public Modules&quot;:{&quot;GobstonesTranslator&quot;:&quot;models_GobstonesTranslator&quot;,&quot;LocaleDefinition&quot;:&quot;models_LocaleDefinition&quot;,&quot;Errors&quot;:&quot;models_Errors&quot;},&quot;Internal Modules&quot;:{&quot;StringReader&quot;:&quot;helpers_StringReader&quot;,&quot;BidirectionalMap&quot;:&quot;helpers_BidirectionalMap&quot;,&quot;Translation&quot;:&quot;translations_Locale&quot;,&quot;Locale&quot;:&quot;translations_Locale&quot;}}
+				</ul>
+			</nav>
+		</div>
+		<div class="col-7 offset-3 col-content">
+			<h1>Class StringReader</h1>
+			<section class="tsd-panel tsd-comment"><div class="tsd-comment tsd-typography tsd-comment-shorttext">
+					<div class="lead">
+						<p>The StringReader is the hearth on how the Gobstones Language code
+							is read for translation. The code passes through an instance of this
+							class, and is read one word at a time, maintaining characters that are non word
+						exactly as they are (preserves formatting of the code).</p>
+					</div>
+					</div><div class="tsd-comment tsd-typography tsd-comment-text">
+					<p>The most important method in this class is probably the <a href="helpers_stringreader.stringreader.html#isalpha">isAlpha</a> method,
+						that states what characters should be considered part of a word, and which don&#39;t.
+					In order to better support UTF-8 this method should be revised in the future.</p>
+			</div></section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">StringReader</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="helpers_stringreader.stringreader.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="helpers_stringreader.stringreader.html#index" class="tsd-kind-icon">index</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="helpers_stringreader.stringreader.html#str" class="tsd-kind-icon">str</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="helpers_stringreader.stringreader.html#wordenders" class="tsd-kind-icon">word<wbr>Enders</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="helpers_stringreader.stringreader.html#eof" class="tsd-kind-icon">eof</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="helpers_stringreader.stringreader.html#isalpha" class="tsd-kind-icon">is<wbr>Alpha</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="helpers_stringreader.stringreader.html#isword" class="tsd-kind-icon">is<wbr>Word</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="helpers_stringreader.stringreader.html#nextchar" class="tsd-kind-icon">next<wbr>Char</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="helpers_stringreader.stringreader.html#nextword" class="tsd-kind-icon">next<wbr>Word</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="helpers_stringreader.stringreader.html#offsettononalpha" class="tsd-kind-icon">offset<wbr>ToNon<wbr>Alpha</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="helpers_stringreader.stringreader.html#peekchar" class="tsd-kind-icon">peek<wbr>Char</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="helpers_stringreader.stringreader.html#peekword" class="tsd-kind-icon">peek<wbr>Word</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>String<wbr>Reader<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, wordEnders<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="helpers_stringreader.stringreader.html" class="tsd-signature-type">StringReader</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Create a new instance of a StringReader for the given string.
+									The reader starts at position 0 (the beginning of the string).</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>str: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The string this reader should operate uppon.</p>
+									</div>
+								</li>
+								<li>
+									<h5>wordEnders: <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = ...</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="helpers_stringreader.stringreader.html" class="tsd-signature-type">StringReader</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="index" class="tsd-anchor"></a>
+					<h3>index</h3>
+					<div class="tsd-signature tsd-kind-icon">index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>The current index where the reader is at.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="str" class="tsd-anchor"></a>
+					<h3>str</h3>
+					<div class="tsd-signature tsd-kind-icon">str<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>The string given to the reader.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="wordenders" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> word<wbr>Enders</h3>
+					<div class="tsd-signature tsd-kind-icon">word<wbr>Enders<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>The regexp used to detect when a word ends</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="eof" class="tsd-anchor"></a>
+					<h3>eof</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">eof<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Returns whether or not this reader has reach the end of the file.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="isalpha" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr>Alpha</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Alpha<span class="tsd-signature-symbol">(</span>char<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Returns whether or not the given character is
+										an alphanumeric character (or a character that can form part of
+									a Gobstones Language identifier or keyword that requires translation).</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+								<dl class="tsd-comment-tags"><dt>todo</dt>
+									<dd><p>There should be a way to provide the suffix to the reader in order
+										to avoid using it as a finishing character.</p>
+								</dd></dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>char: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isword" class="tsd-anchor"></a>
+					<h3>is<wbr>Word</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Word<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Returns whether or not the current element in this reader is a word.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="nextchar" class="tsd-anchor"></a>
+					<h3>next<wbr>Char</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">next<wbr>Char<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Consume and return the next character in this reader.
+									If the reader is at the end of the file, undefined is returned.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="nextword" class="tsd-anchor"></a>
+					<h3>next<wbr>Word</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">next<wbr>Word<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Consume and return the next word (multiple characters) in this reader.
+									If the reader is at the end of the file, undefined is returned.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="offsettononalpha" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> offset<wbr>ToNon<wbr>Alpha</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">offset<wbr>ToNon<wbr>Alpha<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Returns the number of characters that needs to be consumed to end
+									the current word (that is, reach the non alpha character)</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="peekchar" class="tsd-anchor"></a>
+					<h3>peek<wbr>Char</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">peek<wbr>Char<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Peek on the next character in this reader, without consuming it.
+									If the reader is at the end of the file, undefined is returned.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="peekword" class="tsd-anchor"></a>
+					<h3>peek<wbr>Word</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">peek<wbr>Word<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Peek on the next word (multiple characters) in this reader, without consuming it.
+									If the reader is at the end of the file, undefined is returned.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<!--{&quot;options&quot;:&quot;/Users/alanrodas/Proyectos/gobstones-server/gobstones-lang-intl&quot;,&quot;tsconfig&quot;:&quot;/Users/alanrodas/Proyectos/gobstones-server/gobstones-lang-intl&quot;,&quot;entryPoints&quot;:[&quot;./src&quot;],&quot;exclude&quot;:[&quot;**/*.test.ts&quot;,&quot;**/index.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:true,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:false,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:true,&quot;includes&quot;:&quot;./src&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;docs&quot;,&quot;json&quot;:&quot;&quot;,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:true,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:true,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false,&quot;links&quot;:[{&quot;label&quot;:&quot;Repository&quot;,&quot;url&quot;:&quot;https://github.com/gobstones/gobstones-lang-intl&quot;},{&quot;label&quot;:&quot;Gobstones Docs&quot;,&quot;url&quot;:&quot;https://dev.gobstones.org&quot;},{&quot;label&quot;:&quot;Contribution Guidelines&quot;,&quot;url&quot;:&quot;https://dev.gobstones.org/contribution-guidelines&quot;}],&quot;outline&quot;:[{&quot;Public Modules&quot;:{&quot;GobstonesTranslator&quot;:&quot;models_GobstonesTranslator&quot;,&quot;LocaleDefinition&quot;:&quot;models_LocaleDefinition&quot;,&quot;Errors&quot;:&quot;models_Errors&quot;},&quot;Internal Modules&quot;:{&quot;StringReader&quot;:&quot;helpers_StringReader&quot;,&quot;BidirectionalMap&quot;:&quot;helpers_BidirectionalMap&quot;,&quot;Translation&quot;:&quot;translations_Locale&quot;,&quot;Locale&quot;:&quot;translations_Locale&quot;}}]}-->
+		</div>
+		<div class="col-2 col-menu secondary-menu">
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module root">
+						<a href="helpers_stringreader.stringreader.html" class="tsd-kind-icon">String<wbr>Reader</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="helpers_stringreader.stringreader.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="helpers_stringreader.stringreader.html#index" class="tsd-kind-icon">index</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="helpers_stringreader.stringreader.html#str" class="tsd-kind-icon">str</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="helpers_stringreader.stringreader.html#wordenders" class="tsd-kind-icon">word<wbr>Enders</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="helpers_stringreader.stringreader.html#eof" class="tsd-kind-icon">eof</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="helpers_stringreader.stringreader.html#isalpha" class="tsd-kind-icon">is<wbr>Alpha</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="helpers_stringreader.stringreader.html#isword" class="tsd-kind-icon">is<wbr>Word</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="helpers_stringreader.stringreader.html#nextchar" class="tsd-kind-icon">next<wbr>Char</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="helpers_stringreader.stringreader.html#nextword" class="tsd-kind-icon">next<wbr>Word</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="helpers_stringreader.stringreader.html#offsettononalpha" class="tsd-kind-icon">offset<wbr>ToNon<wbr>Alpha</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="helpers_stringreader.stringreader.html#peekchar" class="tsd-kind-icon">peek<wbr>Char</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="helpers_stringreader.stringreader.html#peekword" class="tsd-kind-icon">peek<wbr>Word</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

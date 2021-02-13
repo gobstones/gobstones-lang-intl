@@ -1,15 +1,6 @@
-/**
- * @ignore
- *
- * @author Alan Rodas Bonjour <alanrodas@gmail.com>
- *
- * @packageDocumentation
- */
-import fs from 'fs';
-import commander, { program } from 'commander';
-import { availableLocales, LocaleName } from './translations';
-import { intl, defaultLocale } from './translations';
-import { GobstonesTranslator } from './models/Translator';
+import { GobstonesTranslator } from './models/GobstonesTranslator';
+import { cli } from '@gobstones/gobstones-core';
+import { intl } from './translations';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const packageJSON = require('../package.json');
@@ -26,121 +17,82 @@ interface CLIArguments {
 
 // Read from the package.json in order to retrieve the name and version
 const name = (packageJSON.name as string).split('/').slice(-1).pop();
-const version = packageJSON.version;
+const versionNumber = packageJSON.version;
 
-// Add translations and default language
-const availableLangs = availableLocales.map((e) => '"' + e + '"').join(' | ');
-const language = getUserLocale();
-intl.setLanguage(language);
-
-const generateCLI = (theProgram: commander.Command): commander.Command => {
-    theProgram.name(name);
-    theProgram.description(intl.translate('cli.descriptions.tool'));
-    theProgram.version(version, '-v, --version', intl.translate('cli.descriptions.version'));
-    theProgram.helpOption('-h, --help', intl.translate('cli.descriptions.help'));
-    theProgram.addHelpCommand(false);
-
-    withGeneralOptions(theProgram.command('translate [code]'), true, true)
-        .description(intl.translate('cli.translate.description'))
-        .action((code: string, cmdArgs: CLIArguments) => {
-            validateLanguageFlag(cmdArgs.language);
-            const input = cmdArgs.in !== undefined ? readFileInput(cmdArgs.in) : code;
-            const translator = new GobstonesTranslator({
-                from: cmdArgs.from,
-                to: cmdArgs.to,
-                names: cmdArgs.names ? parseJSON(cmdArgs.names) : undefined,
-                locales: cmdArgs.locales ? parseJSON(cmdArgs.locales) : undefined
+cli({
+    translator: intl,
+    texts: {
+        name,
+        versionNumber,
+        help: 'cli.descriptions.help',
+        tool: 'cli.descriptions.tool',
+        language: 'cli.descriptions.language',
+        version: 'cli.descriptions.version'
+    }
+})
+    .command('translate [code]', 'cli.translate.description', (cmd) => {
+        cmd.input('cli.descriptions.in', 'cli.errors.file')
+            .output('cli.descriptions.out')
+            .option('-f, --from <locale>', 'cli.descriptions.from')
+            .option('-t, --to <locale>', 'cli.descriptions.to')
+            .option('-n, --names <JSONObject>', 'cli.descriptions.names')
+            .option('-L, --locales <JSONObject>', 'cli.descriptions.locales')
+            .action((app, _, opts: CLIArguments) => {
+                app.outputHelpOnNoArgs();
+                const input = app.read();
+                const translator = new GobstonesTranslator({
+                    from: opts.from,
+                    to: opts.to,
+                    names: opts.names ? parseJSON(app, opts.names) : undefined,
+                    locales: opts.locales ? parseJSON(app, opts.locales) : undefined
+                });
+                const output = translator.translate(input);
+                app.write(output);
             });
-            const output = translator.translate(input);
-            if (cmdArgs.out) {
-                writeToFile(cmdArgs.out, output);
-            } else {
-                writeToConsole(output);
-            }
-        });
+    })
+    .command('toTokens [code]', 'cli.toTokens.description', (cmd) => {
+        cmd.input('cli.descriptions.in', 'cli.errors.file')
+            .output('cli.descriptions.out')
+            .option('-f, --from <locale>', 'cli.descriptions.from')
+            .option('-n, --names <JSONObject>', 'cli.descriptions.names')
+            .option('-L, --locales <JSONObject>', 'cli.descriptions.locales')
+            .action((app, _, opts: CLIArguments) => {
+                app.outputHelpOnNoArgs();
+                const input = app.read();
+                const translator = new GobstonesTranslator({
+                    from: opts.from,
+                    names: opts.names ? parseJSON(app, opts.names) : undefined,
+                    locales: opts.locales ? parseJSON(app, opts.locales) : undefined
+                });
+                const output = translator.toTokens(input);
+                app.write(output);
+            });
+    })
+    .command('fromTokens [code]', 'cli.fromTokens.description', (cmd) => {
+        cmd.input('cli.descriptions.in', 'cli.errors.file')
+            .output('cli.descriptions.out')
+            .option('-t, --to <locale>', 'cli.descriptions.to')
+            .option('-n, --names <JSONObject>', 'cli.descriptions.names')
+            .option('-L, --locales <JSONObject>', 'cli.descriptions.locales')
+            .action((app, _, opts: CLIArguments) => {
+                app.outputHelpOnNoArgs();
+                const input = app.read();
+                const translator = new GobstonesTranslator({
+                    to: opts.to,
+                    names: opts.names ? parseJSON(app, opts.names) : undefined,
+                    locales: opts.locales ? parseJSON(app, opts.locales) : undefined
+                });
+                const output = translator.fromTokens(input);
+                app.write(output);
+            });
+    })
+    .run();
 
-    withGeneralOptions(theProgram.command('toTokens'), true, false).description(
-        intl.translate('cli.toTokens.description')
-    );
-
-    withGeneralOptions(theProgram.command('fromTokens'), false, true).description(
-        intl.translate('cli.fromTokens.description')
-    );
-
-    return theProgram;
-};
-
-const withGeneralOptions = (
-    command: commander.Command,
-    useFrom = false,
-    useTo = false
-): commander.Command => {
-    command
-        .option(
-            '-l, --language <locale>',
-            intl.translate('cli.descriptions.language', { availableLangs }),
-            language
-        )
-        .option('-i, --in <filename>', intl.translate('cli.descriptions.file'))
-        .option('-o, --out <filename>', intl.translate('cli.descriptions.out'))
-        .option('-n, --names <JSONObject>', intl.translate('cli.descriptions.names'))
-        .option('-n, --locales <JSONObject>', intl.translate('cli.descriptions.locales'));
-    if (useFrom) {
-        command.requiredOption('-f, --from <locale>', intl.translate('cli.descriptions.from'));
-    }
-    if (useTo) {
-        command.requiredOption('-t, --to <locale>', intl.translate('cli.descriptions.to'));
-    }
-    return command;
-};
-
-const validateLanguageFlag = (lang: string): void => {
-    ensureOrFailAndExit(
-        availableLocales.indexOf(lang) !== -1,
-        intl.translate('cli.errors.language', { lang, availableLangs })
-    );
-};
-
-const parseJSON = (location: string, value?: string): any => {
+const parseJSON = (app: any, location: string, value?: string): any => {
     if (value === undefined) return undefined;
     try {
         return JSON.parse(value);
     } catch (e) {
-        ensureOrFailAndExit(false, intl.translate('cli.errors.json', { location }));
+        app.ensureOrFailAndExit(false, intl.translate('cli.errors.json', { location }));
     }
 };
-const readFileInput = (fileName: string): string => {
-    ensureOrFailAndExit(fs.existsSync(fileName), intl.translate('cli.errors.file', { fileName }));
-    return fs.readFileSync(fileName).toString();
-};
-
-const writeToFile = (fileName: string, contents: string): void =>
-    fs.writeFileSync(fileName, contents);
-
-const writeToConsole = (contents: string): void =>
-    // eslint-disable-next-line no-console
-    console.log(contents);
-
-const ensureOrFailAndExit = (condition: boolean, error: string): void => {
-    if (!condition) {
-        // eslint-disable-next-line no-console
-        console.error(error);
-        process.exit(1);
-    }
-};
-
-export const cli = generateCLI(program);
-cli.parse(process.argv);
-
-function getUserLocale(): LocaleName {
-    const env = process.env ?? {};
-    const locale: string = env.LC_NAME ?? env.LC_ALL ?? env.LC_MESSAGES ?? env.LANG ?? env.LANGUAGE;
-    if (locale) {
-        for (const localeName in availableLocales) {
-            if (locale.indexOf(localeName) >= 0) {
-                return localeName as LocaleName;
-            }
-        }
-    }
-    return defaultLocale;
-}
