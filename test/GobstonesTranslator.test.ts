@@ -1,7 +1,8 @@
 import { describe, expect, it } from '@jest/globals';
 
 import { GobstonesTranslator } from '../src/index';
-import { given } from 'jest-rspec-utils';
+
+const given = describe;
 
 const esToEsTranslator = new GobstonesTranslator({
     from: 'es',

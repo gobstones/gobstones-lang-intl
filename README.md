@@ -2,6 +2,11 @@
 
 A library for translating the Gobstones Language built-ints and keywords into diferent locales.
 
+[![Licence](https://img.shields.io/github/license/gobstones/gobstones-lang-intl?style=plastic&label=License&logo=open-source-initiative&logoColor=white&color=olivegreen)](https://github.com/gobstones/gobstones-lang-intl/blob/main/LICENSE) [![Version](https://img.shields.io/github/package-json/v/gobstones/gobstones-lang-intl?style=plastic&label=Version&logo=git-lfs&logoColor=white&color=crimson)](https://www.npmjs.com/package/@gobstones/gobstones-lang-intl) [![API Docs](https://img.shields.io/github/package-json/homepage/gobstones/gobstones-lang-intl?color=blue&label=API%20Docs&logo=gitbook&logoColor=white&style=plastic)](https://gobstones.github.io/gobstones-lang-intl)
+
+![GitHub Workflow Tests](https://img.shields.io/github/workflow/status/gobstones/gobstones-lang-intl/test-on-commit?style=plastic&label=Tests&logo=github-actions&logoColor=white) ![GitHub Workflow Build](https://img.shields.io/github/workflow/status/gobstones/gobstones-lang-intl/build-on-commit?style=plastic&label=Build&logo=github-actions&logoColor=white)
+
+
 ## Install
 
 Install with **npm** by using

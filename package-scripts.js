@@ -1,116 +1,130 @@
 /* eslint-disable */
-/**
- * Windows: Please do not use trailing comma as windows will fail with token error
- */
 const {
     concurrent,
     series,
     nps,
     run,
-    webpack,
+    rollup,
     typedoc,
     jest,
     prettier,
     eslint,
     serve,
     remove,
-    copy,
-    onchange
+    copy
 } = require('./nps-tooling');
 
 module.exports = {
     scripts: {
-        default: nps('dev'),
-        /*
-         * Run the index in development mode
-         */
+        default: 'nps help',
+
         dev: {
-            script: run('./src/index.ts'),
-            description: 'Run the index in development mode',
+            script: run({ file: './src/index.ts' }),
+            description: 'Run "index.ts" in development mode',
             watch: {
-                script: onchange('./src/**/*.ts', run('./src/index.ts'))
+                script: run({ file: './src/index.ts', watch: './src/**/*.ts' }),
+                description: 'Run "index.ts" in development mode and watch for changes'
             }
         },
-        /*
-         * Build the application for deployment
-         */
+
         build: {
-            script: series(nps('clean.dist'), webpack()),
-            description: 'Build the application into the dist folder'
+            script: series(nps('clean.dist'), rollup()),
+            description: 'Build the application into "dist" folder',
+            watch: {
+                script: series(nps('clean.dist'), rollup({ watch: './src/**/*' })),
+                description: 'Build the application into "dist" folder and watch for changes'
+            }
         },
-        /*
-         * Run the tests
-         */
+
         test: {
-            script: series(nps('clean.coverage'), nps('lint'), jest()),
-            description: 'Run the index in development mode',
+            script: series(nps('clean.coverage'), nps('lint'), jest({ coverage: true })),
+            description: 'Run the tests, including linting',
+            watch: {
+                script: series(jest({ coverage: true, watch: true })),
+                description: 'Run the tests with no linting, and wait for changes'
+            },
             serve: {
                 script: series(
                     nps('clean.coverage'),
-                    nps('lint'),
-                    jest('--coverageThreshold "{}"'),
+                    jest({ coverage: true, noThreshold: true }),
                     serve('./coverage')
                 ),
-                description: 'Serve the coverage report produced by jest'
+                description:
+                    'Run the tests, including linting, and serve the coverage reports in HTML',
+                watch: {
+                    script: series(
+                        nps('clean.coverage'),
+                        concurrent(
+                            jest({ coverage: true, noThreshold: true, watch: true }),
+                            serve('./coverage')
+                        )
+                    ),
+                    description:
+                        'Run the tests with no linting, and wait for changes, and serve the coverage report'
+                }
             }
         },
-        /**
-         * Helpers
-         */
-        clean: {
-            dist: {
-                script: remove('./dist'),
-                description: 'Delete the dist folder',
-                hiddenFromHelp: true,
-                silent: true
-            },
-            docs: {
-                script: remove('./docs'),
-                description: 'Delete the docs folder',
-                hiddenFromHelp: true,
-                silent: true
-            },
-            coverage: {
-                script: remove('./coverage'),
-                description: 'Delete the coverage folder',
-                hiddenFromHelp: true,
-                silent: true
-            }
-        },
-        prettify: {
-            script: prettier('./src/**/*.ts'),
-            description: 'Run Prettier on all the files',
-            hiddenFromHelp: true
-        },
-        lint: {
-            script: series(eslint('./src'), eslint('./test')),
-            description: 'Run ESLint on all the files',
-            hiddenFromHelp: true,
-            fix: {
-                script: series(eslint('./src', true), eslint('./test', true)),
-                description: 'Run ESLint on all the files with --fix',
-                hiddenFromHelp: true
-            }
-        },
+
         doc: {
             script: series(
                 nps('clean.docs'),
                 typedoc(),
-                copy('./docs/index.html', './docs/globals.html')
+                copy({ src: './docs/index.html', dest: './docs/globals.html' })
             ),
             description: 'Run Typedoc and generate docs',
-            hiddenFromHelp: true,
-            serve: {
-                script: series('nps doc', serve('./docs')),
-                description: 'Generate and serve the docs as static files',
-                hiddenFromHelp: true
-            },
             watch: {
-                script: series(
-                    nps('clean.docs'),
-                    concurrent(serve('./docs'), onchange('./src/**/*.ts', nps('doc')))
-                )
+                script: series(nps('doc'), typedoc({ watch: true })),
+                description: 'Run Typedoc and generate docs and watch for changes.'
+            },
+            serve: {
+                script: series(nps('doc'), serve('./docs')),
+                description: 'Run Typedoc and generate docs, then serve the docs as HTML',
+                watch: {
+                    script: series(
+                        nps('doc'),
+                        concurrent(typedoc({ watch: true }), serve('./docs'))
+                    ),
+                    description:
+                        'Run Typedoc and generate docs and watch for changes while serving the docs as HTML'
+                }
             }
+        },
+
+        clean: {
+            script: series(nps('clean.dist'), nps('clean.docs'), nps('clean.coverage')),
+            description: 'Remove all automatically generated files and folders',
+            dist: {
+                script: remove({ files: './dist' }),
+                description: 'Delete the dist folder',
+                silent: true
+            },
+            docs: {
+                script: remove({ files: './docs' }),
+                description: 'Delete the docs folder',
+                silent: true
+            },
+            coverage: {
+                script: remove({ files: './coverage' }),
+                description: 'Delete the coverage folder',
+                silent: true
+            }
+        },
+
+        lint: {
+            script: series(eslint({ files: './src' }), eslint({ files: './test' })),
+            description: 'Run ESLint on all the files (src and tests)',
+            fix: {
+                script: series(
+                    eslint({ files: './src', fix: true }),
+                    eslint({ files: './test', fix: true })
+                ),
+                description: 'Run ESLint on all the files (src and tests) with --fix option'
+            }
+        },
+
+        prettify: {
+            script: prettier({ files: './src/**/*.ts' }),
+            description: 'Run Prettier on all the files, writing the results'
         }
     }
 };

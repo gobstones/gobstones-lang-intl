@@ -1,5 +1,5 @@
 import { GobstonesTranslator } from './models/GobstonesTranslator';
-import { cli } from '@gobstones/gobstones-core';
+import { cli } from '@gobstones/gobstones-core/cli';
 import { intl } from './translations';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

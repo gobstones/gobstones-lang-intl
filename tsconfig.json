@@ -5,13 +5,13 @@
         "esModuleInterop": true,
         "allowJs": true,
         "sourceMap": true,
-        "composite": true,
         "declaration": true,
         "declarationMap": true,
-        "declarationDir": "dist/typings",
+        "declarationDir": "./dist/typings",
         "moduleResolution": "node",
         "resolveJsonModule": true,
-        "stripInternal": true
+        "stripInternal": true,
+        "composite": false
 
     },
     "include": [

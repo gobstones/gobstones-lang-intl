@@ -1,7 +1,8 @@
 import { describe, expect, it } from '@jest/globals';
 
 import { StringReader } from '../../src/helpers/StringReader';
-import { given } from 'jest-rspec-utils';
+
+const given = describe;
 
 function doTimes(n: number, f: () => void): void {
     for (let i = 0; i < n; i++) {

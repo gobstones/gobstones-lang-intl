@@ -1,7 +1,8 @@
 import { describe, expect, it } from '@jest/globals';
 
 import { BidirectionalMap } from '../../src/helpers/BidirectionalMap';
-import { given } from 'jest-rspec-utils';
+
+const given = describe;
 
 describe('BidirectionalMap', () => {
     let bdmap: BidirectionalMap<string, number>;
