@@ -1,4 +1,15 @@
-import { GobstonesTranslator } from './models/GobstonesTranslator';
+/**
+ * This module provides the tools to create a CLI application
+ * using commander as the background tool, but providing some
+ * simple abstractions. The CLI produce may automatically support
+ * multiple languages, input and output from and to files as well
+ * as stdout, and other perks.
+ *
+ * @author Alan Rodas Bonjour <alanrodas@gmail.com>
+ *
+ * @module cli
+ */
+import { GobstonesTranslator } from './translator/GobstonesTranslator';
 import { cli } from '@gobstones/gobstones-core/cli';
 import { intl } from './translations';
 
@@ -22,7 +33,7 @@ const versionNumber = packageJSON.version;
 cli({
     translator: intl,
     texts: {
-        name,
+        name: name || '',
         versionNumber,
         help: 'cli.descriptions.help',
         tool: 'cli.descriptions.tool',

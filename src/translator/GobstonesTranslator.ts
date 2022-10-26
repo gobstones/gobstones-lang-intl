@@ -1,54 +1,9 @@
 /**
- * This module is in charge of the conversion and translation of
- * code between different Gobstones Localized code strings and
- * Gobstones Abstract Code. It provides classes and interfaces to
- * work with such conversions, and define how the conversions should behave.
- *
- * The following definitions are important and used through all the documentation
- * of this module:
- * * **Locale**: The short name that identifies a natural language of a user, such as
- *      'en' for English or 'es' for Spanish. Names of a locale may consist of a
- *      2 letter word that complies with ISO 639-1, or a 2 letter word followed by
- *      a dash and a 2 letter word complying with ISO-3166 (country code), such as
- *      'en-GB', 'en-US' or 'es-AR'. Additionally, you may find locales with the
- *      aforementioned shape that contains a '-full' at the end, such as 'es-full'
- *      or 'es-AR-full'. This are used to identify a version of the locale that
- *      translates both Gobstones Language built-in commands and expressions
- *      such as (Drop, Grab, or Poner, Sacar in spanish) as well as the language
- *      keywords (such as program or repeat). You can check the README to
- *      know [all the currently built-in supported locales](/#Supported Locales)
- * * **Gobstones Localized Language**: A string containing Gobstones Language code that
- *      is assumed to be in a specific locale. e.g. If a user built the code assuming
- *      english keywords and built-in commands and expressions names, the language is
- *      Gobstones Localized Language for 'en' locale.
- * * **Gobstones Abstract Language**: A string containing Gobstones Language like code, that
- *      uses Tokens instead of keywords or built-in commands or expressions names. This is
- *      locale agnostic, and cannot be run out of the box in the gobstones-interpreter, as
- *      token don't have valid Gobstones Language Syntax.
- * * **Token**: A word that is used to identify a Gobstones Language built-in commands,
- *      expressions or keyword in a locale agnostic manner. Although tokens may be
- *      configured, by default they contain symbols (a prefix and a suffix) that are
- *      not part of the standard Gobstones Syntax. An example of a token is
- *      '$GBS_COMMANDS_DROP$' That identifies the Drop built-in command. Note that the
- *      prefix and suffix are configured completely separated of the token names
- *      (GBS_COMMANDS_DROP being the token name in this case), and such prefix and suffix
- *      are only used in the input and output when consuming/producing Gobstones Abstract
- *      Language code, but not when defining locales. You can check [[LocaleTokens]]
- *      to see all the available token names.
- * * **source Locale**: The source locale is the locale that is assumed for any operation of
- *      a [[GobstonesTranslator | translator]] that required reading Gobstones Localized code.
- * * **destination Locale**: The destination locale is the locale that is assumed for any
- *      operation of a [[GobstonesTranslator | translator]] that required writing Gobstones
- *      Localized code.
- *
- * @see [[GobstonesTranslator]] to see how the translator works.
- * @see [[GobstonesTranslatorOptions]] to see how to configure a translator.
- *
+ * @module Translator
  * @author Alan Rodas Bonjour <alanrodas@gmail.com>
- *
- * @packageDocumentation
  */
-import { LocaleDefinition, defaultLocales } from '../lang';
+
+import { LocaleDefinition, availableLocales } from '../lang-translations';
 import {
     LocaleNameCollision,
     NoFromLocaleGiven,
@@ -56,32 +11,32 @@ import {
     NoToLocaleGiven,
     NonExistentLocaleGiven
 } from './Errors';
+import { and, expect, or } from '@gobstones/gobstones-core';
 
 import { BidirectionalMap } from '../helpers/BidirectionalMap';
 import { StringReader } from '../helpers/StringReader';
-import { expect } from '@gobstones/gobstones-core';
 import { intl } from '../translations';
 
 /**
  * This interface represents the options that can be passed to a
- * [[GobstonesTranslator]]. This options are passed on construction time, and
+ * {@link GobstonesTranslator}. This options are passed on construction time, and
  * shape the way the translator works, which locales it supports and from which
  * and to which locale it will be translating to.
  */
 export interface GobstonesTranslatorOptions {
     /**
-     * The locale which the [[GobstonesTranslator]] will
+     * The locale which the {@link GobstonesTranslator} will
      * assume as source locale when given Gobstones Localized code. This
-     * is the source language used in [[GobstonesTranslator.toTokens]]
-     * and as the source language in [[GobstonesTranslator.translate]].
+     * is the source language used in {@link GobstonesTranslator.toTokens}
+     * and as the source language in {@link GobstonesTranslator.translate}.
      */
     from?: string;
     /**
-     * The locale which the [[GobstonesTranslator]] will
+     * The locale which the {@link GobstonesTranslator} will
      * assume as destination locale when given Gobstones Abstract code or
      * a Gobstones Localized code to convert to a different locale. This
-     * is the destination language used in [[GobstonesTranslator.fromTokens]]
-     * and as the destination language in [[GobstonesTranslator.translate]].
+     * is the destination language used in {@link GobstonesTranslator.fromTokens}
+     * and as the destination language in {@link GobstonesTranslator.translate}.
      */
     to?: string;
     /**
@@ -102,7 +57,7 @@ export interface GobstonesTranslatorOptions {
      */
     names?: Record<string, string>;
     /**
-     * A set of additional user defined locales to register into the [[GobstonesTranslator]].
+     * A set of additional user defined locales to register into the {@link GobstonesTranslator}.
      * By specifying a name of the locale and a set of token to string translations,
      * you are entitled to used your user defined locale as any other, both as source
      * or as destination language in a translation or token conversion.
@@ -158,12 +113,12 @@ export interface GobstonesTranslatorOptions {
 
 /**
  * A set of options that can be passed to a translation function (
- * any of [[GobstonesTranslator.toTokens]], [[GobstonesTranslator.fromTokens]] or
- * [[GobstonesTranslator.translate]]).
+ * any of {@link GobstonesTranslator.toTokens}, {@link GobstonesTranslator.fromTokens} or
+ * {@link GobstonesTranslator.translate}).
  */
 export interface TranslationOptions {
     /**
-     * Include a translation for each of the names in the [[GobstonesTranslatorOptions.names]]
+     * Include a translation for each of the names in the {@link GobstonesTranslatorOptions.names}
      * option that the translator was created with to the output.
      */
     includeNames?: boolean;
@@ -173,9 +128,10 @@ export interface TranslationOptions {
  * A language map, which consists of a bi-directional map that allows to access both
  * by key or by value.
  *
- * @see [[BidirectionalMap]]
+ * @see {@link Helpers.BidirectionalMap}
+ * @private
  */
-type LanguageMap = BidirectionalMap<string, string>;
+export type LanguageMap = BidirectionalMap<string, string>;
 
 /**
  * The GobstonesTranslator class is in charge of translating all keywords and built-in
@@ -183,49 +139,49 @@ type LanguageMap = BidirectionalMap<string, string>;
  * as providing an abstract 'Tokens' intermediate output that is locale agnostic.
  *
  * You can construct an instance of this class (called a translator, for short) by
- * providing a set of [[GobstonesTranslatorOptions]] to the constructor, which are then
+ * providing a set of {@link GobstonesTranslatorOptions} to the constructor, which are then
  * stored in the newly created instance as it's configuration.
  *
  * The configuration of a translator is private and cannot be changed once constructed.
  *
  * You can the ask the translator to perform different operations, such as translating
  * from a locale specific Gobstones Localized code to Gobstones Abstract code
- * (see [[toTokens]]), or go the other way around (see [[fromTokens]]), or event
- * translate between locales (see [[translate]]). The actions the translator is allowed
+ * (see {@link toTokens}), or go the other way around (see {@link fromTokens}), or event
+ * translate between locales (see {@link translate}). The actions the translator is allowed
  * to perform depend on the configuration given at construction time to the translator,
  * so for example, a translator that was created without a destination language is not able
- * to translate from one language to another (See [[constructor]] and the aforementioned
+ * to translate from one language to another (See {@link constructor} and the aforementioned
  * operations for more information)
  */
 export class GobstonesTranslator {
     /**
      * The locale which this translator will assume as input
      * language when given Gobstones Localized code. This
-     * is the source locale used in [[toTokens]]
-     * and as the source locale in [[translate]].
+     * is the source locale used in {@link toTokens}
+     * and as the source locale in {@link translate}.
      */
-    private from: string;
+    private from: string | undefined;
     /**
      * The locale which this translator will
      * assume as output locale when given Gobstones Abstract code. This
-     * is the destination locale used in [[fromTokens]]
-     * and as the destination locale in [[translate]].
+     * is the destination locale used in {@link fromTokens}
+     * and as the destination locale in {@link translate}.
      */
-    private to: string;
+    private to: string | undefined;
     /**
      * A set of additional names for this translator used to translate
      * additional words besides the built-in commands,
      * expressions and keywords of the Gobstones Language.
      *
-     * @see [[GobstonesTranslatorOptions.names]] for more info.
+     * @see {@link GobstonesTranslatorOptions.names} for more info.
      */
-    private names: BidirectionalMap<string, string>;
+    private names: BidirectionalMap<string, string> | undefined;
     /**
      * A set of registered locales for this translator. This is automatically
      * populated with the built-in supported locales, and expanded with the user
      * defined locales given as argument to the constructor.
      *
-     * @see [[GobstonesTranslatorOptions.locales]] for more info on adding custom locales.
+     * @see {@link GobstonesTranslatorOptions.locales} for more info on adding custom locales.
      */
     private registeredLocales: Record<string, LanguageMap>;
     /**
@@ -248,23 +204,23 @@ export class GobstonesTranslator {
     private tokenSuffix: string;
 
     /**
-     * Returns a new instance of [[GobstonesTranslator]] (a translator, for short) with
+     * Returns a new instance of {@link GobstonesTranslator} (a translator, for short) with
      * the given set of options configured.
      *
      * @param options The options to use to configure the translator.
      *
-     * @see [[GobstonesTranslatorOptions]] for learning more about all the available options
+     * @see {@link GobstonesTranslatorOptions} for learning more about all the available options
      *      you can pass to the constructor.
      *
-     * @throws [[NonExistentLocaleGiven]] if a name that is not a
+     * @throws {@link NonExistentLocaleGiven} if a name that is not a
      *      built-in supported locale, nor a user defined locale is given to any of
-     *      [[GobstonesTranslatorOptions.from]] or [[GobstonesTranslatorOptions.to]].
+     *      {@link GobstonesTranslatorOptions.from} or {@link GobstonesTranslatorOptions.to}.
      *      This error also arises when a user attempts to define a locale in the
-     *      [[GobstonesTranslatorOptions.locales]] option, that extends another locale, which
+     *      {@link GobstonesTranslatorOptions.locales} option, that extends another locale, which
      *      itself is not defined.
      *
-     * @throws [[LocaleNameCollision]] if a user provides a user defined
-     *      locale in the [[GobstonesTranslatorOptions.locales]] option that has a name
+     * @throws {@link LocaleNameCollision} if a user provides a user defined
+     *      locale in the {@link GobstonesTranslatorOptions.locales} option that has a name
      *      already defined (as a built-in supported locale or a user-defined locale previously
      *      defined)
      */
@@ -273,56 +229,52 @@ export class GobstonesTranslator {
         this.tokenSuffix = options.tokenSuffix ?? '$';
 
         this.registeredLocales = {};
-        this.registerAllLocales(defaultLocales);
-        this.registerAllLocales(options.locales);
+        this.registerAllLocales(availableLocales);
+        this.registerAllLocales(options.locales || {});
         this.from = options.from;
         this.to = options.to;
         this.names = options.names
             ? new BidirectionalMap(Object.entries(options.names))
             : undefined;
 
-        expect
-            .or(
-                expect(this.from).toBeUndefined(),
-                expect.and(
-                    expect(this.from).toBeDefined(),
-                    expect(this.registeredLocales[this.from]).toBeDefined()
-                )
+        or(
+            expect(this.from).toBeUndefined(),
+            and(
+                expect(this.from).toBeDefined(),
+                expect(this.registeredLocales[this.from as string]).toBeDefined()
             )
-            .orThrow(new NonExistentLocaleGiven(this.from, 'fromLang'));
-        expect
-            .or(
-                expect(this.to).toBeUndefined(),
-                expect.and(
-                    expect(this.to).toBeDefined(),
-                    expect(this.registeredLocales[this.to]).toBeDefined()
-                )
+        ).orThrow(new NonExistentLocaleGiven(this.from || '', 'fromLang'));
+        or(
+            expect(this.to).toBeUndefined(),
+            and(
+                expect(this.to).toBeDefined(),
+                expect(this.registeredLocales[this.to as string]).toBeDefined()
             )
-            .orThrow(new NonExistentLocaleGiven(this.to, 'toLang'));
+        ).orThrow(new NonExistentLocaleGiven(this.to || '', 'toLang'));
     }
 
     /**
      * Convert a given code to a string containing abstract tokens for built-in commands
      * and expressions and language keywords.
-     * The input code should be in the language this translator has configured as [[from]].
+     * The input code should be in the language this translator has configured as {@link from}.
      *
-     * @param code The Gobstones Language code to translate. Assumed to be in [[from]].
+     * @param code The Gobstones Language code to translate. Assumed to be in {@link from}.
      * @param options A set of additional options for the conversion.
      *
      * @returns A string containing Abstract Gobstones Code.
      *
-     * @throws [[NoFromLanguageGiven | NoFromLanguageGiven]] if the translator
-     *      was configured without a [[GobstonesTranslatorOptions.from | from]] option.
-     * @throws [[NoNamesGiven | NoNamesGiven]] if the option
-     *      [[TranslationOptions.includeNames | includeNames]] was given,
-     *      but no [[GobstonesTranslatorOptions.names | names]] option was used when creating
+     * @throws {NoFromLanguageGiven} if the translator
+     *      was configured without a {@link GobstonesTranslatorOptions.from | from} option.
+     * @throws {NoNamesGiven} if the option
+     *      {@link TranslationOptions.includeNames | includeNames} was given,
+     *      but no {@link GobstonesTranslatorOptions.names | names} option was used when creating
      *      this translator.
      */
     public toTokens(code: string, options?: TranslationOptions): string {
         expect(this.from).toBeDefined().orThrow(new NoFromLocaleGiven());
         const map = this.fullMap(
-            options?.includeNames,
-            this.registeredLocales[this.from].getMapByValues(),
+            options?.includeNames || false,
+            this.registeredLocales[this.from as string].getMapByValues(),
             this.names?.getMapByKeys()
         );
         return this.translateWithMap(code, map);
@@ -330,27 +282,27 @@ export class GobstonesTranslator {
 
     /**
      * Convert a given code containing abstract tokens to a Gobstones Language code
-     * in the [[to]] language.
+     * in the {@link to} language.
      * The input code should be a string containing Gobstones Code with abstract tokens instead
      * of language specific code (Abstract Gobstones Code).
      *
      * @param code The Gobstones Code to translate. Assumed to be Abstract Gobstones Code.
      * @param options A set of additional options for the conversion.
      *
-     * @returns A string containing Gobstones Code in [[to]].
+     * @returns A string containing Gobstones Code in {@link to}.
      *
-     * @throws [[NoToLanguageGiven|NoToLanguageGiven]] if the translator
-     *      was configured without a [[GobstonesTranslatorOptions.to | to]] option.
-     * @throws [[NoNamesGiven | NoNamesGiven]] if the option
-     *      [[TranslationOptions.includeNames | includeNames]] was given,
-     *      but no [[GobstonesTranslatorOptions.names | names]] option was used when creating
+     * @throws {NoToLanguageGiven} if the translator
+     *      was configured without a {@link GobstonesTranslatorOptions.to | to} option.
+     * @throws {NoNamesGiven} if the option
+     *      {@link TranslationOptions.includeNames | includeNames} was given,
+     *      but no {@link GobstonesTranslatorOptions.names | names} option was used when creating
      *      this translator.
      */
     public fromTokens(code: string, options?: TranslationOptions): string {
         expect(this.to).toBeDefined().orThrow(new NoToLocaleGiven());
         const map = this.fullMap(
-            options?.includeNames,
-            this.registeredLocales[this.to].getMapByKeys(),
+            options?.includeNames || false,
+            this.registeredLocales[this.to as string].getMapByKeys(),
             this.names?.getMapByValues()
         );
         return this.translateWithMap(code, map);
@@ -358,22 +310,22 @@ export class GobstonesTranslator {
 
     /**
      * Translate a given code from the source language to the destination language.
-     * The source language is the one used as [[from]] when constructing the translator, and
-     * the destination language is that used as [[to]].
+     * The source language is the one used as {@link from} when constructing the translator, and
+     * the destination language is that used as {@link to}.
      * The input should be Gobstones Language code in the source language.
      *
-     * @param code The Gobstones Language code to translate. Assumed to be in [[from]].
+     * @param code The Gobstones Language code to translate. Assumed to be in {@link from}.
      * @param options A set of additional options for the conversion.
      *
-     * @returns A string containing Gobstones Code in [[to]].
+     * @returns A string containing Gobstones Code in {@link to}.
      *
-     * @throws [[NoFromLanguageGiven|NoFromLanguageGiven]] if the translator
-     *      was configured without a [[GobstonesTranslatorOptions.from | from]] option.
-     * @throws [[NoToLanguageGiven | NoToLanguageGiven]] if the translator
-     *      was configured without a [[GobstonesTranslatorOptions.to | to]] option.
-     * @throws [[NoNamesGiven | NoNamesGiven]] if the option
-     *      [[TranslationOptions.includeNames | includeNames]] was given,
-     *      but no [[GobstonesTranslatorOptions.names | names]] option was used when creating
+     * @throws {NoFromLanguageGiven} if the translator
+     *      was configured without a {@link GobstonesTranslatorOptions.from | from} option.
+     * @throws {NoToLanguageGiven} if the translator
+     *      was configured without a {@link GobstonesTranslatorOptions.to | to} option.
+     * @throws {NoNamesGiven} if the option
+     *      {@link TranslationOptions.includeNames | includeNames} was given,
+     *      but no {@link GobstonesTranslatorOptions.names | names} option was used when creating
      *      this translator.
      */
     public translate(code: string, options?: TranslationOptions): string {
@@ -398,12 +350,12 @@ export class GobstonesTranslator {
      * @param languages An object containing language names as keys, and language definitions
      *      as their values.
      *
-     * @throws [[NonExistentLocaleGiven]] if a locale name that is not a
+     * @throws {NonExistentLocaleGiven} if a locale name that is not a
      *      built-in supported language, nor a user defined language is given to as the
-     *      [[LocaleDefinition | LocaleDefinition.extends]] option in any of the language
+     *      {@link LocaleDefinition | LocaleDefinition.extends} option in any of the language
      *      definitions.
      *
-     * @throws [[LocaleNameCollision]] if any of the given languages
+     * @throws {LocaleNameCollision} if any of the given languages
      *      has a name that has been previously defined.
      */
     private registerAllLocales(languages: Record<string, LocaleDefinition>): void {
@@ -418,28 +370,29 @@ export class GobstonesTranslator {
      * @param name The name of the language to register.
      * @param langDefinition The language definition to register.
      *
-     * @throws [[NonExistentLocaleGiven]] if a locale name that is not a
+     * @throws {NonExistentLocaleGiven} if a locale name that is not a
      *      built-in supported language, nor a user defined language is given to as the
-     *      [[LocaleDefinition | LocaleDefinition.extends]] option of the language definition.
+     *      {@link LocaleDefinition | LocaleDefinition.extends} option of the language definition.
      *
-     * @throws [[LocaleNameCollision]] if the given name has
+     * @throws {@link LocaleNameCollision} if the given name has
      *      been used in a previously registered language.
      */
     private registerLocale(name: string, langDefinition: LocaleDefinition): void {
-        expect
-            .or(
-                expect(langDefinition['extends']).toBeUndefined(),
-                expect.and(
-                    expect(langDefinition['extends']).toBeDefined(),
-                    expect(this.registeredLocales[langDefinition['extends']]).toBeDefined()
-                )
+        or(
+            expect((langDefinition as any)['extends']).toBeUndefined(),
+            and(
+                expect((langDefinition as any)['extends']).toBeDefined(),
+                expect(this.registeredLocales[(langDefinition as any)['extends']]).toBeDefined()
             )
-            .orThrow(new NonExistentLocaleGiven(langDefinition['extends'], 'extends'));
+        ).orThrow(new NonExistentLocaleGiven((langDefinition as any)['extends'], 'extends'));
         expect(this.registeredLocales[name]).toBeUndefined().orThrow(new LocaleNameCollision(name));
 
         const definitionEntries =
-            langDefinition['extends'] !== undefined
-                ? this.getExtendedDefinitionEntries(langDefinition, langDefinition['extends'])
+            (langDefinition as any)['extends'] !== undefined
+                ? this.getExtendedDefinitionEntries(
+                      langDefinition,
+                      (langDefinition as any)['extends']
+                  )
                 : (Object.entries(langDefinition) as [string, string][]).map<[string, string]>(
                       ([k, v]) => [`${this.tokenPrefix}${k}${this.tokenSuffix}`, v]
                   );
@@ -453,9 +406,9 @@ export class GobstonesTranslator {
      * @param langDefinition The language definition that extends another.
      * @param extendedLanguage The extended language name.
      *
-     * @throws [[NonExistentLocaleGiven]] if a locale name that is not a
+     * @throws {NonExistentLocaleGiven} if a locale name that is not a
      *      built-in supported language, nor a user defined language is given to as the
-     *      [[LocaleDefinition | LocaleDefinition.extends]] option of the language definition.
+     *      {@link LocaleDefinition | LocaleDefinition.extends} option of the language definition.
      */
     private getExtendedDefinitionEntries(
         langDefinition: LocaleDefinition,
@@ -477,8 +430,8 @@ export class GobstonesTranslator {
                     keyNoPrefixNorSuffix.length - this.tokenSuffix.length
                 );
             }
-            return langDefinition[keyNoPrefixNorSuffix]
-                ? [key, langDefinition[keyNoPrefixNorSuffix]]
+            return (langDefinition as any)[keyNoPrefixNorSuffix]
+                ? [key, (langDefinition as any)[keyNoPrefixNorSuffix]]
                 : [key, value];
         });
     }
@@ -498,15 +451,15 @@ export class GobstonesTranslator {
         map: Map<string, string>,
         namesMap?: Map<string, string>
     ): Map<string, string> {
-        expect
-            .or(
-                expect(useNames).toBeFalsy(),
-                expect.and(expect(useNames).toBeTruthy(), expect(this.names).toBeDefined())
-            )
-            .orThrow(new NoNamesGiven());
+        or(
+            expect(useNames).toBeFalsy(),
+            and(expect(useNames).toBeTruthy(), expect(this.names).toBeDefined())
+        ).orThrow(new NoNamesGiven());
         return !useNames
             ? map
-            : new Map(Array.from(map.entries()).concat(Array.from(namesMap.entries())));
+            : new Map(
+                  Array.from(map.entries()).concat(Array.from(namesMap ? namesMap.entries() : []))
+              );
     }
 
     /**
@@ -528,7 +481,9 @@ export class GobstonesTranslator {
         while (!sr.eof()) {
             if (sr.isWord()) {
                 const word = sr.nextWord();
-                result += map.has(word) ? map.get(word) : word;
+                if (word) {
+                    result += map.has(word) ? map.get(word) : word;
+                }
             } else {
                 result += sr.nextChar();
             }

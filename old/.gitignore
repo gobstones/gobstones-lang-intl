@@ -1,0 +1,18 @@
+# Node files #
+node_modules/
+npm-debug.log
+yarn-error.log
+.rollup.cache
+
+# OS generated files #
+.DS_Store
+Thumbs.db
+.tmp/
+
+# Dist #
+dist/
+coverage/
+tsconfig.build.json
+
+# IDE #
+.idea/

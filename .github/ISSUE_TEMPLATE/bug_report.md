@@ -4,7 +4,7 @@ about: Create a report to help us improve
 
 ---
 
-Before opening a new issue, please take a moment to review our [**community guidelines**](https://dev.gobstones.org/contribution-guidelines) to make the contribution process easy and effective for everyone involved.
+Before opening a new issue, please take a moment to review our [**guidelines**](https://github.com/gobstones/gobstones-guidelines) to make the contribution process easy and effective for everyone involved.
 
 ## Description
 A clear and concise description of what the bug is.
@@ -21,4 +21,6 @@ A clear and concise description of what you expected to happen.
 ## Versions
 
 - Library Version:
-- Node/NPM Version:
+- Node/NPM Version (if any):
+- Operating System Version:
+- Browser Version:

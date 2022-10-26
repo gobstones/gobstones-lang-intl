@@ -1,0 +1,24 @@
+# Editor and style files
+.editorconfig
+.prettierignore
+.prettierrc
+.eslintrc.js
+.vscode/*
+.github/*
+
+# tests
+test/*
+jest.config.js
+coverage
+
+# docs
+docs
+
+# Building Configuration Files
+webpack.config.js
+rollup.config.js
+tsconfig.json
+package-scripts.js
+
+# Additional documentarion
+TODO.md

@@ -1,6 +1,6 @@
 # gobstones-lang-intl
 
-A library for translating the Gobstones Language built-ints and keywords into diferent locales.
+A library for translating the Gobstones Language built-in's and keywords into different locales.
 
 [![Licence](https://img.shields.io/github/license/gobstones/gobstones-lang-intl?style=plastic&label=License&logo=open-source-initiative&logoColor=white&color=olivegreen)](https://github.com/gobstones/gobstones-lang-intl/blob/main/LICENSE) [![Version](https://img.shields.io/github/package-json/v/gobstones/gobstones-lang-intl?style=plastic&label=Version&logo=git-lfs&logoColor=white&color=crimson)](https://www.npmjs.com/package/@gobstones/gobstones-lang-intl) [![API Docs](https://img.shields.io/github/package-json/homepage/gobstones/gobstones-lang-intl?color=blue&label=API%20Docs&logo=gitbook&logoColor=white&style=plastic)](https://gobstones.github.io/gobstones-lang-intl)
 
@@ -187,15 +187,18 @@ Once a language is added to your object, you can use it in both `fromLang` and `
 
 ## Supported Locales
 
-By default the following languages are supported as built-in:
+By default the following languages are supported as built-in languages:
 
-* en: (keywords in english, built-ins in english)
-* es: (keywords in english, built-ins in spanish)
-* es-full: (keywords in spanish, built-ins in spanish) NOT IMPLEMENTED YET
-* pt: (keywords in english, built-ins in portuguese) NOT IMPLEMENTED YET
-* pt-full: (keywords in portuguese, built-ins in portuguese) NOT IMPLEMENTED YET
+* en (with country specific variants en-AU, en-BZ, en-CA, en-CB,
+    en-GB, en-IE, en-IN, en-JM, en-MT, en-MY, en-NZ, en-PH, en-SG,
+    en-TT, en-US, en-ZA, en-ZW)
+* es (with country specific variants es-AR, es-BO, es-CL, es-CO,
+    es-CR, es-DO, es-EC, es-ES, es-GT, es-HN, es-MX, es-NI, es-PA
+    es-PE, es-PR, es-PY, es-SV, es-US, es-UY, es-VE)
 
-Check out the language definitions in `./src/translations` to see how to provide your custom languages.
+Other languages should be provided by the user.
+
+Check out the language definitions in `./src/lang-translations` to see how to provide your custom languages.
 
 ## Errors
 
@@ -309,6 +312,6 @@ npm start doc.serve
 ```
 and the accessing 'localhost:5000', as all the code is documented.
 
-#### Contributing
+## Contributing
 
-See the Gobstones Platform Contributions Guidelines to contribute.
+See the [Gobstones Platform Contributions Guidelines](https://github.com/gobstones/gobstones-guidelines) to contribute.

@@ -1,16 +1,18 @@
 /**
- * @ignore
- *
+ * @module LangTranslations
  * @author Alan Rodas Bonjour <alanrodas@gmail.com>
- *
- * @packageDocumentation
  */
-import { LocaleDefinition } from '../models/LocaleDefinition';
+
+import { LocaleDefinition } from '../translator/LocaleDefinition';
 
 /**
- * The Spanish translation
+ * The Basic Spanish translation for the Gobstones Programming Language.
+ *
+ * In this translation, keyword remain in English, while built-in commands
+ * and expressions are presented in Spanish. This is the default configuration
+ * for the language, and it's the first one originally conceptualize in Gobstones.
  */
-export default {
+export const es = {
     extends: 'en',
     /* Types */
     GBS_TYPE_COLOR: 'Color',
@@ -55,3 +57,5 @@ export default {
     GBS_EXPRESSION_LAST: 'último',
     GBS_EXPRESSION_INIT: 'sinElÚltimo'
 } as LocaleDefinition;
+
+export default es;

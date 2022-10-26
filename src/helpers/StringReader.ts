@@ -1,10 +1,6 @@
 /**
- * This module exports a convenient class for reading
- * a string one character at a time, or one word at a time.
- *
+ * @module Helpers
  * @author Alan Rodas Bonjour <alanrodas@gmail.com>
- *
- * @packageDocumentation
  */
 
 /**
@@ -13,7 +9,7 @@
  * class, and is read one word at a time, maintaining characters that are non word
  * exactly as they are (preserves formatting of the code).
  *
- * The most important method in this class is probably the [[isAlpha]] method,
+ * The most important method in this class is probably the {@link isAlpha} method,
  * that states what characters should be considered part of a word, and which don't.
  * In order to better support UTF-8 this method should be revised in the future.
  */
@@ -47,7 +43,7 @@ export class StringReader {
      * Peek on the next character in this reader, without consuming it.
      * If the reader is at the end of the file, undefined is returned.
      */
-    public peekChar(): string {
+    public peekChar(): string | undefined {
         if (this.eof()) return undefined;
         return this.str.charAt(this.index);
     }
@@ -56,7 +52,7 @@ export class StringReader {
      * Consume and return the next character in this reader.
      * If the reader is at the end of the file, undefined is returned.
      */
-    public nextChar(): string {
+    public nextChar(): string | undefined {
         if (this.eof()) return undefined;
         const char = this.peekChar();
         this.index++;
@@ -67,7 +63,7 @@ export class StringReader {
      * Peek on the next word (multiple characters) in this reader, without consuming it.
      * If the reader is at the end of the file, undefined is returned.
      */
-    public peekWord(): string {
+    public peekWord(): string | undefined {
         if (this.eof()) return undefined;
         const currentIdx = this.index;
         const word = this.nextWord();
@@ -79,7 +75,7 @@ export class StringReader {
      * Consume and return the next word (multiple characters) in this reader.
      * If the reader is at the end of the file, undefined is returned.
      */
-    public nextWord(): string {
+    public nextWord(): string | undefined {
         if (this.eof()) return undefined;
         const offset = this.offsetToNonAlpha();
         let currentIdx = 0;

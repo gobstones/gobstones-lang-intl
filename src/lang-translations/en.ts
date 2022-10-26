@@ -1,16 +1,18 @@
 /**
- * @ignore
- *
+ * @module LangTranslations
  * @author Alan Rodas Bonjour <alanrodas@gmail.com>
- *
- * @packageDocumentation
  */
-import { LocaleDefinition } from '../models/LocaleDefinition';
+
+import { LocaleDefinition } from '../translator/LocaleDefinition';
 
 /**
- * The english translation
+ * The Basic English translation for the Gobstones Programming Language.
+ *
+ * In this translation, everything is in english, both the keywords and
+ * built-ins. The used english is en-US, although other derivatives may
+ * be produced by extending this one.
  */
-export default {
+export const en = {
     GBS_DEFINITION_PROGRAM: 'program',
     GBS_DEFINITION_INTERACTIVE: 'interactive',
     GBS_DEFINITION_PROCEDURE: 'procedure',
@@ -101,3 +103,5 @@ export default {
     GBS_ERROR_EXPRESSION_BOOM: 'boom',
     GBS_ERROR_TYPECHECK: 'Typecheck'
 } as LocaleDefinition;
+
+export default en;

@@ -3,7 +3,7 @@ export {
     GobstonesTranslator,
     GobstonesTranslatorOptions,
     TranslationOptions
-} from './models/GobstonesTranslator';
+} from './translator/GobstonesTranslator';
 
 export {
     GobstonesTranslationError,
@@ -12,9 +12,9 @@ export {
     NoToLocaleGiven,
     NoNamesGiven,
     LocaleNameCollision
-} from './models/Errors';
+} from './translator/Errors';
 
 export {
     LocaleDefinition as LanguageDefinition,
     LocaleTokens as LanguageDefinitionMsgs
-} from './models/LocaleDefinition';
+} from './translator/LocaleDefinition';

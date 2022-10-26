@@ -16,3 +16,8 @@ tsconfig.build.json
 
 # IDE #
 .idea/
+
+# PackageManager specific #
+pnpm-lock.yaml
+package-lock.json
+yarn.lock

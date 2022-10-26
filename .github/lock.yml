@@ -16,7 +16,7 @@ lockComment: >
   related bugs.
 
 # Limit to only `issues` or `pulls`
-# only: issues
+only: issues
 
 # Optionally, specify configuration settings just for `issues` or `pulls`
 # issues:

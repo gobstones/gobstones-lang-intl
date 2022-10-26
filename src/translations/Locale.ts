@@ -1,16 +1,8 @@
 /**
- * This module defines an internal locale definition that any translation
- * should comply to.
+ * @ignore
  *
- * Note that this module does not provide localization for the Gobstones Language
- * but for this tool internally, and should not be confused with other classes
- * exposed by this package. If you want to learn about how to translate the
- * Gobstones Language see [[models/GobstonesTranslator | the GobstonesTranslator module]] and
- * the [[models/LocaleDefinition | the LocaleDefinition module]].
- *
+ * @module Translations
  * @author Alan Rodas Bonjour <alanrodas@gmail.com>
- *
- * @packageDocumentation
  */
 
 /**

@@ -1,10 +1,9 @@
 /**
  * @ignore
- *
+ * @module Translations
  * @author Alan Rodas Bonjour <alanrodas@gmail.com>
- *
- * @packageDocumentation
  */
+
 /* eslint-disable max-len */
 import { Locale } from './Locale';
 
@@ -27,10 +26,8 @@ export const en: Locale = {
             version: 'Show the version information',
             help: 'Show the tool`s help',
             language: 'Select the language in which the tool works internally',
-            in:
-                'Select the file from which to select the code to translate. If none given, the contents are expected inline',
-            out:
-                'Select the output file in which to save the results. If none given, the output is written to stdout',
+            in: 'Select the file from which to select the code to translate. If none given, the contents are expected inline',
+            out: 'Select the output file in which to save the results. If none given, the output is written to stdout',
             from: 'The locale to translate the code from',
             to: 'The locale to translate the code to',
             names: 'A JSON string containing name transformations',

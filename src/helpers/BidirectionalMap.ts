@@ -1,9 +1,6 @@
 /**
- * This module exports a convenient class for a bidirectional map.
- *
+ * @module Helpers
  * @author Alan Rodas Bonjour <alanrodas@gmail.com>
- *
- * @packageDocumentation
  */
 
 /**
@@ -22,7 +19,7 @@ export class BidirectionalMap<K, V> {
     public constructor(map?: [K, V][]) {
         this.map = new Map<K, V>(map);
         this.reverseMap = new Map<V, K>();
-        for (const [key, value] of map) {
+        for (const [key, value] of map || []) {
             this.reverseMap.set(value, key);
         }
     }
@@ -47,7 +44,7 @@ export class BidirectionalMap<K, V> {
      * Retrieve the value associated with the given key in this bidirectional map.
      * @param key The key to retrieve the value from
      */
-    public getByKey(key: K): V {
+    public getByKey(key: K): V | undefined {
         return this.map.get(key);
     }
 
@@ -55,7 +52,7 @@ export class BidirectionalMap<K, V> {
      * Retrieve the key associated with the given value in this bidirectional map.
      * @param value The value to retrieve the key from
      */
-    public getByValue(value: V): K {
+    public getByValue(value: V): K | undefined {
         return this.reverseMap.get(value);
     }
 

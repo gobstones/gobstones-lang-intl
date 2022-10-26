@@ -1,14 +1,6 @@
 /**
- * This module contains the base structure of a Gobstones Language code translation
- * for a specific locale. The exported member [[LocaleTokens]]
- * is the type in charge of how a locale translation is defined.
- *
- * @see [[LocaleDefinition]] to see how to define a locale based on another, or a full locale.
- * @see [[LocaleTokens]] to see how to define a locale with all the keywords.
- *
+ * @module Translator
  * @author Alan Rodas Bonjour <alanrodas@gmail.com>
- *
- * @packageDocumentation
  */
 
 /**
@@ -20,7 +12,7 @@
   *
   * If you wish to extend an existing locale, provide an object with the `extends` key
   * with the name of a built-in supported locale or user defined locale that was previously
-  * registered to a [[GobstonesTranslator | translator]]. Then, add all keys that you wish to
+  * registered to a {@link GobstonesTranslator | translator}. Then, add all keys that you wish to
   * override from the extended locale. The following example extends from base english and
   * overrides just the name used for the Color type in the locale (using Colour, as the british
   * spelling).
@@ -34,7 +26,7 @@
     ```
   *
   * If that you wish is to create a new locale altogether, then you need to provide an
-  * object that satisfies the [[LocaleTokens]] interface, providing a specific
+  * object that satisfies the {@link LocaleTokens} interface, providing a specific
   * translation for each of the required tokens.
   */
 export type LocaleDefinition = LocaleTokens | ({ extends: string } & Partial<LocaleTokens>);
@@ -44,7 +36,7 @@ export type LocaleDefinition = LocaleTokens | ({ extends: string } & Partial<Loc
  * to comply with a Gobstones Language Translation.
  *
  * If you wish to extend an already registered locale, you may want to
- * comply with [[LocaleDefinition]] instead of this interface, which allows
+ * comply with {@link LocaleDefinition} instead of this interface, which allows
  * for partially defining some messages while reusing others from the extended locale.
  *
  * Each attribute on this interface corresponds to the name of an Abstract Token of the

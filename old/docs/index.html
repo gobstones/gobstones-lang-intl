@@ -1,0 +1,338 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@gobstones/gobstones-lang-intl - v0.1.2</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<ul class="results-priority" style="display:none">
+					</ul>
+					<a href="index.html" class="title">@gobstones/gobstones-lang-intl - v0.1.2</a>
+					&emsp;<a href="https://github.com/gobstones/gobstones-lang-intl" class="title">Repository</a>
+					&emsp;<a href="https://dev.gobstones.org" class="title">Gobstones Docs</a>
+					&emsp;<a href="https://dev.gobstones.org/contribution-guidelines" class="title">Contribution Guidelines</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation outline primary">
+				<a style="margin-left:0em" href="globals.html">Globals</a>
+				<ul style="display:none">
+					{&quot;Public Modules&quot;:{&quot;GobstonesTranslator&quot;:&quot;models_GobstonesTranslator&quot;,&quot;LocaleDefinition&quot;:&quot;models_LocaleDefinition&quot;,&quot;Errors&quot;:&quot;models_Errors&quot;},&quot;Internal Modules&quot;:{&quot;StringReader&quot;:&quot;helpers_StringReader&quot;,&quot;BidirectionalMap&quot;:&quot;helpers_BidirectionalMap&quot;,&quot;Translation&quot;:&quot;translations_Locale&quot;,&quot;Locale&quot;:&quot;translations_Locale&quot;}}
+				</ul>
+			</nav>
+		</div>
+		<div class="col-7 offset-3 col-content">
+			<h1>@gobstones/gobstones-lang-intl - v0.1.2</h1>
+			<div class="tsd-panel tsd-typography">
+				<a href="#gobstones-lang-intl" id="gobstones-lang-intl" style="color: inherit; text-decoration: none;">
+					<h1>gobstones-lang-intl</h1>
+				</a>
+				<p>A library for translating the Gobstones Language built-ints and keywords into diferent locales.</p>
+				<p><a href="https://github.com/gobstones/gobstones-lang-intl/blob/main/LICENSE"><img src="https://img.shields.io/github/license/gobstones/gobstones-lang-intl?style=plastic&label=License&logo=open-source-initiative&logoColor=white&color=olivegreen" alt="Licence"></a> <a href="https://www.npmjs.com/package/@gobstones/gobstones-lang-intl"><img src="https://img.shields.io/github/package-json/v/gobstones/gobstones-lang-intl?style=plastic&label=Version&logo=git-lfs&logoColor=white&color=crimson" alt="Version"></a> <a href="https://gobstones.github.io/gobstones-lang-intl"><img src="https://img.shields.io/github/package-json/homepage/gobstones/gobstones-lang-intl?color=blue&label=API%20Docs&logo=gitbook&logoColor=white&style=plastic" alt="API Docs"></a></p>
+				<p><img src="https://img.shields.io/github/workflow/status/gobstones/gobstones-lang-intl/test-on-commit?style=plastic&label=Tests&logo=github-actions&logoColor=white" alt="GitHub Workflow Tests"> <img src="https://img.shields.io/github/workflow/status/gobstones/gobstones-lang-intl/build-on-commit?style=plastic&label=Build&logo=github-actions&logoColor=white" alt="GitHub Workflow Build"></p>
+				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+					<h2>Install</h2>
+				</a>
+				<p>Install with <strong>npm</strong> by using</p>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">install</span><span style="color: #000000"> @</span><span style="color: #001080">gobstones</span><span style="color: #000000">/</span><span style="color: #001080">gobstones</span><span style="color: #000000">-</span><span style="color: #001080">lang</span><span style="color: #000000">-</span><span style="color: #001080">intl</span>
+</code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<p>This library can be used in different ways to abstract away the language in which the user is using the Gobstones Language. Next we will show some different ways in which to use the library:</p>
+				<a href="#from-code-to-keywords" id="from-code-to-keywords" style="color: inherit; text-decoration: none;">
+					<h4>From code to keywords</h4>
+				</a>
+				<p>Get a code with keywords and built-ins replaced to a set of token names in every space. So, the following code:</p>
+				<pre><code><span style="color: #001080">program</span><span style="color: #000000"> { </span><span style="color: #795E26">Poner</span><span style="color: #000000">(</span><span style="color: #001080">Rojo</span><span style="color: #000000">) }</span>
+</code></pre>
+				<p>will be translated to (considering the above code in spanish):</p>
+				<pre><code><span style="color: #001080">$GBS_DEFINITION_PROGRAM$</span><span style="color: #000000"> { </span><span style="color: #795E26">$GBS_COMMAND_GRAB$</span><span style="color: #000000">(</span><span style="color: #001080">$GBS_COLOR_RED$</span><span style="color: #000000">) }</span>
+</code></pre>
+				<p>The output is what is expected internally by the parser and other tools. To produce this, you can use the library as follows:</p>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">GobstonesTranslator</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;gobstones-lang-intl&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">gobstonesTranslator</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">GobstonesTranslator</span><span style="color: #000000">({</span><span style="color: #001080">from:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;es&#039;</span><span style="color: #000000">});</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">codeWithKeywords</span><span style="color: #000000"> = </span><span style="color: #001080">gobstonesTranslator</span><span style="color: #000000">.</span><span style="color: #795E26">toKeywords</span><span style="color: #000000">(</span><span style="color: #001080">codeInSpanish</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#from-keywords-to-code" id="from-keywords-to-code" style="color: inherit; text-decoration: none;">
+					<h4>From keywords to code</h4>
+				</a>
+				<p>You can do the reverse trip, grabbing a code with tokens in it, and producing keywords in it&#39;s place:</p>
+				<p>So</p>
+				<pre><code><span style="color: #001080">$GBS_DEFINITION_PROGRAM$</span><span style="color: #000000"> { </span><span style="color: #795E26">$GBS_COMMAND_GRAB$</span><span style="color: #000000">(</span><span style="color: #001080">$GBS_COLOR_RED$</span><span style="color: #000000">) }</span>
+</code></pre>
+				<p>will be translated to spanish as:</p>
+				<pre><code><span style="color: #001080">program</span><span style="color: #000000"> { </span><span style="color: #795E26">Poner</span><span style="color: #000000">(</span><span style="color: #001080">Rojo</span><span style="color: #000000">) }</span>
+</code></pre>
+				<p>and to english as:</p>
+				<pre><code><span style="color: #001080">program</span><span style="color: #000000"> { </span><span style="color: #795E26">Drop</span><span style="color: #000000">(</span><span style="color: #001080">Red</span><span style="color: #000000">) }</span>
+</code></pre>
+				<p>For this behavior use the library in the following way:</p>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">GobstonesTranslator</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;gobstones-lang-intl&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">gobstonesTranslator</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">GobstonesTranslator</span><span style="color: #000000">({</span><span style="color: #001080">to:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;es&#039;</span><span style="color: #000000">});</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">codeInSpanish</span><span style="color: #000000"> = </span><span style="color: #001080">gobstonesTranslator</span><span style="color: #000000">.</span><span style="color: #795E26">fromKeywords</span><span style="color: #000000">(</span><span style="color: #001080">codeWithKeywords</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#translating-between-different-languages" id="translating-between-different-languages" style="color: inherit; text-decoration: none;">
+					<h4>Translating between different languages</h4>
+				</a>
+				<p>You can to the trip from code to keywords, and to keywords from code, in a two way trip, but we provide a way to do it easily by providing both <code>fromLang</code> and <code>toLang</code> to the constructor and calling translate:</p>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">GobstonesTranslator</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;gobstones-lang-intl&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">gobstonesTranslator</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">GobstonesTranslator</span><span style="color: #000000">({</span><span style="color: #001080">from:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;es&#039;</span><span style="color: #000000">, </span><span style="color: #001080">to:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;en&#039;</span><span style="color: #000000">});</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">codeInEnglish</span><span style="color: #000000"> = </span><span style="color: #001080">gobstonesTranslator</span><span style="color: #000000">.</span><span style="color: #795E26">translate</span><span style="color: #000000">(</span><span style="color: #001080">codeInSpanish</span><span style="color: #000000">);</span>
+</code></pre>
+				<p>Note that you cannot call translate if you didn&#39;t provide both languages. See the errors section for more information about that.</p>
+				<a href="#translating-procedure-and-function-names" id="translating-procedure-and-function-names" style="color: inherit; text-decoration: none;">
+					<h4>Translating procedure and function names</h4>
+				</a>
+				<p>You can pass a <code>names</code> argument, as a <code>Record&lt;string, string&gt;</code> object, such that the keys are the names of procedures, functions and others in the from language, and the value the string that you want to use in the to language. This allows you to translate more complex code, such as:</p>
+				<pre><code><span style="color: #001080">program</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #795E26">Poner3BolitasDeColor_</span><span style="color: #000000">(</span><span style="color: #001080">Rojo</span><span style="color: #000000">)</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #001080">procedure</span><span style="color: #000000"> </span><span style="color: #795E26">Poner3BolitasDeColor_</span><span style="color: #000000">(</span><span style="color: #001080">colorAPoner</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #795E26">repeat</span><span style="color: #000000"> (</span><span style="color: #098658">3</span><span style="color: #000000">) {</span>
+<span style="color: #000000">        </span><span style="color: #795E26">Poner</span><span style="color: #000000">(</span><span style="color: #001080">colorAPoner</span><span style="color: #000000">)</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p>can be translated to English by using the library as follows:</p>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">GobstonesTranslator</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;gobstones-lang-intl&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">gobstonesTranslator</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">GobstonesTranslator</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">from:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;es&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">to:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;en&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">names:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&#039;Poner3BolitasDeColor_&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Grab3StonesOfColor_&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&#039;colorAPoner&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;colorToGrab&#039;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">codeInEnglish</span><span style="color: #000000"> = </span><span style="color: #001080">gobstonesTranslator</span><span style="color: #000000">.</span><span style="color: #795E26">translate</span><span style="color: #000000">(</span><span style="color: #001080">codeInSpanish</span><span style="color: #000000">, {</span><span style="color: #001080">includeNames:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">});</span>
+</code></pre>
+				<p>This will produce the following output:</p>
+				<pre><code><span style="color: #001080">program</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #795E26">Grab3StonesOfColor_</span><span style="color: #000000">(</span><span style="color: #001080">Red</span><span style="color: #000000">)</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #001080">procedure</span><span style="color: #000000"> </span><span style="color: #795E26">Grab3StonesOfColor_</span><span style="color: #000000">(</span><span style="color: #001080">colorAPcolorToGraboner</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #795E26">repeat</span><span style="color: #000000"> (</span><span style="color: #098658">3</span><span style="color: #000000">) {</span>
+<span style="color: #000000">        </span><span style="color: #795E26">Grab</span><span style="color: #000000">(</span><span style="color: #001080">colorToGrab</span><span style="color: #000000">)</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p>As a caveat, note that there is no context detection of the name usage, and the names are replaces as a mere string replacement technic. This means that we cannot distinguish between different parameters with the same name, and assign different names to each of them.</p>
+				<p>Also note that you can produce keywords including the name replacement by passing <code>includeNames</code> as true to <code>toKeywords</code> as well.</p>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">GobstonesTranslator</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;gobstones-lang-intl&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">gobstonesTranslator</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">GobstonesTranslator</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">fromLang:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;es&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">toLang:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;en&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">names:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&#039;Poner3BolitasDeColor_&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Grab3StonesOfColor_&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&#039;colorAPoner&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;colorToGrab&#039;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">codeWithKeywordsWithEnglishNames</span><span style="color: #000000"> =</span>
+<span style="color: #000000">    </span><span style="color: #001080">gobstonesTranslator</span><span style="color: #000000">.</span><span style="color: #795E26">toKeywords</span><span style="color: #000000">(</span><span style="color: #001080">codeInSpanish</span><span style="color: #000000">, {</span><span style="color: #001080">includeNames:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">});</span>
+</code></pre>
+				<a href="#custom-language" id="custom-language" style="color: inherit; text-decoration: none;">
+					<h2>Custom Language</h2>
+				</a>
+				<p>You can use a custom language by providing a <code>languages</code> object, where each key corresponds to the locale name, and as a value, you can use an language object, containing the gobstones keywords as keys, and the string to use in that language as value. A language object may include the additional <code>extends</code> key, to specify that a language is just an extension of another, in which case, the defined translations are overwritten from the extended language.</p>
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">GobstonesTranslator</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;gobstones-lang-intl&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">gobstonesTranslator</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">GobstonesTranslator</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">fromLang:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;en-GB&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">toLang:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;fr&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">languages:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&#039;en-GB&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">            </span><span style="color: #001080">extends:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;en&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">            </span><span style="color: #001080">GBS_TYPE_COLOR:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Colour&#039;</span>
+<span style="color: #000000">        },</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&#039;fr&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">            </span><span style="color: #001080">GBS_GRAB:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Prenez&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">            </span><span style="color: #001080">GBS_COLOR_RED:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Rouge&#039;</span>
+<span style="color: #000000">            ...</span>
+<span style="color: #000000">        }</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">codeInFrench</span><span style="color: #000000"> =</span>
+<span style="color: #000000">    </span><span style="color: #001080">gobstonesTranslator</span><span style="color: #000000">.</span><span style="color: #795E26">translate</span><span style="color: #000000">(</span><span style="color: #001080">codeInBritishEnglish</span><span style="color: #000000">);</span>
+</code></pre>
+				<p>Note that if your language does not extend another, you must specify all keywords of the Gobstones Language in order for the translation to be correct. Failing to do so will produce an error.</p>
+				<p>Once a language is added to your object, you can use it in both <code>fromLang</code> and <code>toLang</code>.</p>
+				<a href="#supported-locales" id="supported-locales" style="color: inherit; text-decoration: none;">
+					<h2>Supported Locales</h2>
+				</a>
+				<p>By default the following languages are supported as built-in:</p>
+				<ul>
+					<li>en: (keywords in english, built-ins in english)</li>
+					<li>es: (keywords in english, built-ins in spanish)</li>
+					<li>es-full: (keywords in spanish, built-ins in spanish) NOT IMPLEMENTED YET</li>
+					<li>pt: (keywords in english, built-ins in portuguese) NOT IMPLEMENTED YET</li>
+					<li>pt-full: (keywords in portuguese, built-ins in portuguese) NOT IMPLEMENTED YET</li>
+				</ul>
+				<p>Check out the language definitions in <code>./src/translations</code> to see how to provide your custom languages.</p>
+				<a href="#errors" id="errors" style="color: inherit; text-decoration: none;">
+					<h2>Errors</h2>
+				</a>
+				<p>The arguments <code>fromLang</code> and <code>toLang</code> should be used carefully, according to what you want to produce. The following errors may be found on misusage:</p>
+				<ul>
+					<li><strong><code>NonExistentLocaleGiven</code></strong>: When a locale name is used in <code>fromLang</code>or <code>toLang</code> but there is no locale definition built-in or user defined with that name. This also occurs when attempting to extend a language via <code>languages</code> using the <code>extends</code> key for a language that is not defined.</li>
+					<li><strong><code>LocaleNameCollision</code></strong>: When adding a locale name to <code>languages</code> that is already defined.</li>
+					<li><strong><code>NoFromLanguageGiven</code></strong>: When attempting to use <code>translate</code> or <code>toKeywords</code> to an GobstonesLangIntl created with no <code>toLang</code> given to the constructor.</li>
+					<li><strong><code>NoToLanguageGiven</code></strong>: When attempting to use <code>translate</code> or <code>fromKeywords</code> to an GobstonesLangIntl created with no <code>fromLang</code> given to the constructor.</li>
+					<li><strong><code>NoNamesGiven</code></strong>: When attempting to use <code>translate</code> or <code>toKeywords</code> to an GobstonesLangIntl created with no <code>name</code> given to the constructor.</li>
+				</ul>
+				<a href="#caveats" id="caveats" style="color: inherit; text-decoration: none;">
+					<h2>Caveats</h2>
+				</a>
+				<p>There&#39;s a caveat with how language translation works. We replace keywords and built-ins in the from language to their corresponding counterpart in the to language, but procedure names, functions names, type names, variables and others are not translated, as they have semantic meaning that cannot be assumed by the tool. Yet you can provide the <code>names</code>argument to assist in that sense.</p>
+				<p>This implies that when generating Gobstones Abstract code should use a prefix and a suffix that is not part of the language to identify a token as such, and avoid collision with procedure names.Although the names os the tokens are rare enough, but problems may arise, see the following example in spanish:</p>
+				<pre><code><span style="color: #001080">program</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #795E26">Poner</span><span style="color: #000000">(</span><span style="color: #001080">Rojo</span><span style="color: #000000">)</span>
+<span style="color: #000000">    </span><span style="color: #795E26">GBS_COMMAND_DROP</span><span style="color: #000000">(</span><span style="color: #001080">Azul</span><span style="color: #000000">)</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #001080">procedure</span><span style="color: #000000"> </span><span style="color: #795E26">GBS_COMMAND_DROP</span><span style="color: #000000">(</span><span style="color: #001080">color</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #795E26">Poner</span><span style="color: #000000">(</span><span style="color: #001080">color</span><span style="color: #000000">)</span>
+<span style="color: #000000">    </span><span style="color: #795E26">Poner</span><span style="color: #000000">(</span><span style="color: #001080">color</span><span style="color: #000000">)</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p>When transformed to a Gobstones Abstract code without using prefixes or suffixes, the output is as follows:</p>
+				<pre><code><span style="color: #0070C1">GBS_DEFINITION_PROGRAM</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #795E26">GBS_COMMAND_DROP</span><span style="color: #000000">(</span><span style="color: #0070C1">GBS_COLOR_RED</span><span style="color: #000000">)</span>
+<span style="color: #000000">    </span><span style="color: #795E26">GBS_COMMAND_DROP</span><span style="color: #000000">(</span><span style="color: #0070C1">GBS_COLOR_BLUE</span><span style="color: #000000">)</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #001080">procedure</span><span style="color: #000000"> </span><span style="color: #795E26">GBS_COMMAND_DROP</span><span style="color: #000000">(</span><span style="color: #001080">color</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #795E26">GBS_COMMAND_DROP</span><span style="color: #000000">(</span><span style="color: #001080">color</span><span style="color: #000000">)</span>
+<span style="color: #000000">    </span><span style="color: #795E26">GBS_COMMAND_DROP</span><span style="color: #000000">(</span><span style="color: #001080">color</span><span style="color: #000000">)</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p>As you can see, the name of the procedure collides with the token used for <code>Poner</code>(Drop). Now, when translating back to english, the different calls cannot be identify as belonging to a token
+				or to the procedure name. By using a prefix and a suffix the tokens are well delimited, and the output becomes the following:</p>
+				<pre><code><span style="color: #001080">$GBS_DEFINITION_PROGRAM$</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #795E26">$GBS_COMMAND_DROP$</span><span style="color: #000000">(</span><span style="color: #001080">$GBS_COLOR_RED$</span><span style="color: #000000">)</span>
+<span style="color: #000000">    </span><span style="color: #795E26">GBS_COMMAND_DROP</span><span style="color: #000000">(</span><span style="color: #001080">$GBS_COLOR_BLUE$</span><span style="color: #000000">)</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #001080">procedure</span><span style="color: #000000"> </span><span style="color: #795E26">GBS_COMMAND_DROP</span><span style="color: #000000">(</span><span style="color: #001080">color</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #795E26">$GBS_COMMAND_DROP$</span><span style="color: #000000">(</span><span style="color: #001080">color</span><span style="color: #000000">)</span>
+<span style="color: #000000">    </span><span style="color: #795E26">$GBS_COMMAND_DROP$</span><span style="color: #000000">(</span><span style="color: #001080">color</span><span style="color: #000000">)</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p>Now, when translating back to english, only the words that have the prefix and suffix are marked as a call to <code>Poner</code>, but calls to the procedure remain untouched.</p>
+				<a href="#for-developers" id="for-developers" style="color: inherit; text-decoration: none;">
+					<h2>For developers</h2>
+				</a>
+				<a href="#basic-commands" id="basic-commands" style="color: inherit; text-decoration: none;">
+					<h3>Basic commands</h3>
+				</a>
+				<p>You can clone this project and perform the mandatory <code>npm install</code> once in the folder.
+				After that, you can run the code in <code>./src/index.ts</code> with <code>ts-node</code> by running</p>
+				<pre><code class="language-bash"><span style="color: #000000">npm start</span>
+</code></pre>
+				<p>This may be useful for simple testing purposes, although what we recommend is to run the tests, which are written in Jest, by using:</p>
+				<pre><code class="language-bash"><span style="color: #000000">npm </span><span style="color: #795E26">test</span>
+</code></pre>
+				<p>If you want to build the tool for distribution, run:</p>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">start</span><span style="color: #000000"> </span><span style="color: #001080">build</span>
+</code></pre>
+				<p>This will generate the output in the &#39;dist&#39; folder. Both the typings and and index.js file will be generated.</p>
+				<p>You may also want to generate and read the API docs (By using TypeDoc), by running:</p>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">start</span><span style="color: #000000"> </span><span style="color: #001080">doc</span>
+</code></pre>
+				<p>Or if you want, you can run a server with those docs by running:</p>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">start</span><span style="color: #000000"> </span><span style="color: #001080">doc</span><span style="color: #000000">.</span><span style="color: #001080">serve</span>
+</code></pre>
+				<p>The tool uses &#39;nps&#39; to run scripts, and you may find all scripts by checking &#39;package-scripts.js&#39;.
+				Other internal tools provided include prettifying and linting, as well as cleaning some temporary folders.</p>
+				<a href="#code-organization" id="code-organization" style="color: inherit; text-decoration: none;">
+					<h3>Code organization</h3>
+				</a>
+				<p>The code works by reading the code a word at a time, and attempting to match the word to a registered set of words that reside in a map.</p>
+				<p>Most of the code reside in &#39;.src/models/Translator.ts&#39; in the <code>GobstonesTranslator</code> class. This is the main exported class that allows us to create an instance with a specific configuration, and then perform the translations. You can also find interfaces for the types of the different options the class could receive, both in the constructor and in methods.</p>
+				<p>The file &#39;./src/models/Definitions.ts&#39; contains the definition for a Gobstones language locale definitions. In &#39;./src/models/Errors.ts&#39; you may find the different classes used for specific errors.</p>
+				<p>The &#39;./src/helpers&#39; folder contains two files, that provide classes that assist the <code>GobstonesTranslator</code> in it&#39;s internal working. &#39;StringReader.ts&#39; provides the class <code>StringReader</code>that allows for reading a string word by word. The &#39;BidirectionalMap.ts&#39; file exports the <code>BidirectionalMap</code> class that allows for creating maps that can be accessed both by key or by value (internally it works by storing two maps, nothing fancy).</p>
+				<p>If you wish to understand more about the code, we recommend reading the API docs by running</p>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">start</span><span style="color: #000000"> </span><span style="color: #001080">doc</span><span style="color: #000000">.</span><span style="color: #001080">serve</span>
+</code></pre>
+				<p>and the accessing &#39;localhost:5000&#39;, as all the code is documented.</p>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h4>Contributing</h4>
+				</a>
+				<p>See the Gobstones Platform Contributions Guidelines to contribute.</p>
+			</div>
+			<!--{&quot;options&quot;:&quot;/Users/alanrodas/Proyectos/gobstones-server/gobstones-lang-intl&quot;,&quot;tsconfig&quot;:&quot;/Users/alanrodas/Proyectos/gobstones-server/gobstones-lang-intl&quot;,&quot;entryPoints&quot;:[&quot;./src&quot;],&quot;exclude&quot;:[&quot;**/*.test.ts&quot;,&quot;**/index.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:true,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:false,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:true,&quot;includes&quot;:&quot;./src&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;docs&quot;,&quot;json&quot;:&quot;&quot;,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:true,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:true,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false,&quot;links&quot;:[{&quot;label&quot;:&quot;Repository&quot;,&quot;url&quot;:&quot;https://github.com/gobstones/gobstones-lang-intl&quot;},{&quot;label&quot;:&quot;Gobstones Docs&quot;,&quot;url&quot;:&quot;https://dev.gobstones.org&quot;},{&quot;label&quot;:&quot;Contribution Guidelines&quot;,&quot;url&quot;:&quot;https://dev.gobstones.org/contribution-guidelines&quot;}],&quot;outline&quot;:[{&quot;Public Modules&quot;:{&quot;GobstonesTranslator&quot;:&quot;models_GobstonesTranslator&quot;,&quot;LocaleDefinition&quot;:&quot;models_LocaleDefinition&quot;,&quot;Errors&quot;:&quot;models_Errors&quot;},&quot;Internal Modules&quot;:{&quot;StringReader&quot;:&quot;helpers_StringReader&quot;,&quot;BidirectionalMap&quot;:&quot;helpers_BidirectionalMap&quot;,&quot;Translation&quot;:&quot;translations_Locale&quot;,&quot;Locale&quot;:&quot;translations_Locale&quot;}}]}-->
+		</div>
+		<div class="col-2 col-menu secondary-menu">
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+</footer>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
